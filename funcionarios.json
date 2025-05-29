@@ -1,0 +1,24 @@
+[
+    {
+        "idFuncionario": 1,
+        "pessoa": {
+            "idPessoa": 3,
+            "nome": "Pedro",
+            "morada": "Rua C",
+            "contacto": 123456789,
+            "nif": 123456789,
+            "email": "asdda"
+        }
+    },
+    {
+        "idFuncionario": 2,
+        "pessoa": {
+            "idPessoa": 4,
+            "nome": "Ana",
+            "morada": "Rua D",
+            "contacto": 987654321,
+            "nif": 987654321,
+            "email": "asdda"
+        }
+    }
+]

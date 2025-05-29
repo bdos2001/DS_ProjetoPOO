@@ -1,0 +1,102 @@
+[
+    {
+        "matricula": "12-34-AB",
+        "modelo": {
+            "id": 1,
+            "nome": "Ibiza",
+            "marca": {
+                "id": 1,
+                "nome": "Seat"
+            }
+        },
+        "ano": 2023,
+        "dono": {
+            "idPessoa": 1,
+            "nome": "João",
+            "morada": "Rua A",
+            "contacto": 123456789,
+            "nif": 123456789,
+            "email": "asdda"
+        }
+    },
+    {
+        "matricula": "12-35-AB",
+        "modelo": {
+            "id": 1,
+            "nome": "Ibiza",
+            "marca": {
+                "id": 1,
+                "nome": "Seat"
+            }
+        },
+        "ano": 2020,
+        "dono": {
+            "idPessoa": 1,
+            "nome": "João",
+            "morada": "Rua A",
+            "contacto": 123456789,
+            "nif": 123456789,
+            "email": "asdda"
+        }
+    },
+    {
+        "matricula": "12-36-AB",
+        "modelo": {
+            "id": 2,
+            "nome": "A3",
+            "marca": {
+                "id": 2,
+                "nome": "Audi"
+            }
+        },
+        "ano": 2024,
+        "dono": {
+            "idPessoa": 2,
+            "nome": "Maria",
+            "morada": "Rua B",
+            "contacto": 987654321,
+            "nif": 987654321,
+            "email": "asdda"
+        }
+    },
+    {
+        "matricula": "12-37-AB",
+        "modelo": {
+            "id": 3,
+            "nome": "Toledo",
+            "marca": {
+                "id": 1,
+                "nome": "Seat"
+            }
+        },
+        "ano": 2025,
+        "dono": {
+            "idPessoa": 2,
+            "nome": "Maria",
+            "morada": "Rua B",
+            "contacto": 987654321,
+            "nif": 987654321,
+            "email": "asdda"
+        }
+    },
+    {
+        "matricula": "12-38-AB",
+        "modelo": {
+            "id": 1,
+            "nome": "Ibiza",
+            "marca": {
+                "id": 1,
+                "nome": "Seat"
+            }
+        },
+        "ano": 2021,
+        "dono": {
+            "idPessoa": 3,
+            "nome": "Pedro",
+            "morada": "Rua C",
+            "contacto": 123456789,
+            "nif": 123456789,
+            "email": "asdda"
+        }
+    }
+]

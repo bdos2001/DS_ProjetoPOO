@@ -1,0 +1,24 @@
+[
+    {
+        "idCliente": 1,
+        "pessoa": {
+            "idPessoa": 1,
+            "nome": "João",
+            "morada": "Rua Antonio Manuel Frutuoso mens",
+            "contacto": 123456789,
+            "nif": 123456789,
+            "email": "asdda"
+        }
+    },
+    {
+        "idCliente": 2,
+        "pessoa": {
+            "idPessoa": 2,
+            "nome": "Maria",
+            "morada": "Rua B",
+            "contacto": 987654321,
+            "nif": 987654321,
+            "email": "asdda"
+        }
+    }
+]

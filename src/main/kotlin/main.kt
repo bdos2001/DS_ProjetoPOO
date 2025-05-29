@@ -11,66 +11,34 @@ var listaCarros: MutableList<Carro> = mutableListOf()
 var listaMarcas: MutableList<Marca> = mutableListOf()
 var listaModelos: MutableList<Modelo> = mutableListOf()
 
-fun salvarDados() {
+fun guardarFicheiros() {
     val json = Json { prettyPrint = true }
 
-    File("clientes.json").apply {
-        if (!exists()) createNewFile()
-        writeText(json.encodeToString(listaClientes))
-    }
-    File("funcionarios.json").apply {
-        if (!exists()) createNewFile()
-        writeText(json.encodeToString(listaFuncionarios))
-    }
-    File("pessoas.json").apply {
-        if (!exists()) createNewFile()
-        writeText(json.encodeToString(listaPessoas))
-    }
-    File("marcas.json").apply {
-        if (!exists()) createNewFile()
-        writeText(json.encodeToString(listaMarcas))
-    }
-    File("modelos.json").apply {
-        if (!exists()) createNewFile()
-        writeText(json.encodeToString(listaModelos))
-    }
-    File("carros.json").apply {
-        if (!exists()) createNewFile()
-        writeText(json.encodeToString(listaCarros))
-    }
-}
+    File("clientes.json").writeText(json.encodeToString(listaClientes))
+    File("funcionarios.json").writeText(json.encodeToString(listaFuncionarios))
+    File("pessoas.json").writeText(json.encodeToString(listaPessoas))
+    File("carros.json").writeText(json.encodeToString(listaCarros))
+    File("marcas.json").writeText(json.encodeToString(listaMarcas))
+    File("modelos.json").writeText(json.encodeToString(listaModelos))
 
-fun carregarDados() {
-    val json = Json { prettyPrint = true }
-
-    if (File("clientes.json").exists()) {
-        listaClientes = json.decodeFromString(File("clientes.json").readText())
-    }
-    if (File("funcionarios.json").exists()) {
-        listaFuncionarios = json.decodeFromString(File("funcionarios.json").readText())
-    }
-    if (File("pessoas.json").exists()) {
-        listaPessoas = json.decodeFromString(File("pessoas.json").readText())
-    }
-    if (File("marcas.json").exists()) {
-        listaMarcas = json.decodeFromString(File("marcas.json").readText())
-    }
-    if (File("modelos.json").exists()) {
-        listaModelos = json.decodeFromString(File("modelos.json").readText())
-    }
-    if (File("carros.json").exists()) {
-        listaCarros = json.decodeFromString(File("carros.json").readText())
-    }
+    println("Dados guardados com sucesso!")
 }
 
 fun carregarFicheiros() {
-    // Carregar dados ao iniciar
-    carregarDados()
+    val json = Json { prettyPrint = true }
 
-    // Salvar dados ao encerrar o programa
-    Runtime.getRuntime().addShutdownHook(Thread {
-        salvarDados()
-    })
+    try {
+        listaClientes = File("clientes.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaFuncionarios = File("funcionarios.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaPessoas = File("pessoas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaCarros = File("carros.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaMarcas = File("marcas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaModelos = File("modelos.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+
+        println("Dados carregados com sucesso!")
+    } catch (e: Exception) {
+        println("Erro ao carregar os ficheiros: ${e.message}")
+    }
 }
 
 fun menu() {
@@ -91,35 +59,6 @@ fun cls() {
 
 fun main() {
     carregarFicheiros()
-    //Testing
-    val cliente1 = Cliente(1,Pessoa(1,"João","Rua A",123456789,123456789,"asdda"))
-    val cliente2 = Cliente(2,Pessoa(2,"Maria","Rua B",987654321,987654321,"asdda"))
-    val funcionario1 = Funcionario(1,Pessoa(3,"Pedro","Rua C",123456789,123456789,"asdda"))
-    val funcionario2 = Funcionario(2,Pessoa(4,"Ana","Rua D",987654321,987654321,"asdda"))
-    val marca1 = Marca(1,"Seat")
-    val marca2 = Marca(2,"Audi")
-    val modelo1 = Modelo(1,"Ibiza",marca1)
-    val modelo2 = Modelo(2,"A3",marca2)
-    val modelo3 = Modelo(3,"Toledo",marca1)
-    listaPessoas.add(cliente1.pessoa)
-    listaPessoas.add(cliente2.pessoa)
-    listaPessoas.add(funcionario1.pessoa)
-    listaPessoas.add(funcionario2.pessoa)
-    listaClientes.add(cliente1)
-    listaClientes.add(cliente2)
-    listaFuncionarios.add(funcionario1)
-    listaFuncionarios.add(funcionario2)
-    listaMarcas.add(marca1)
-    listaMarcas.add(marca2)
-    listaModelos.add(modelo1)
-    listaModelos.add(modelo2)
-    listaModelos.add(modelo3)
-    listaCarros.add(Carro("12-34-AB", modelo1, 2023, cliente1.pessoa))
-    listaCarros.add(Carro("12-35-AB", modelo1, 2020, cliente1.pessoa))
-    listaCarros.add(Carro("12-36-AB", modelo2, 2024, cliente2.pessoa))
-    listaCarros.add(Carro("12-37-AB", modelo3, 2025, cliente2.pessoa))
-    listaCarros.add(Carro("12-38-AB", modelo1, 2021, funcionario1.pessoa))
-    //Testing
 
     var opcMenu: Int = -1
     while(opcMenu != 0) {
@@ -135,7 +74,7 @@ fun main() {
             5 -> println("Fornecedores/Encomendas")
             0 -> {
                 println("A encerrar o programa")
-                salvarDados()
+                guardarFicheiros()
             }
             else -> println("Opção inválida")
         }

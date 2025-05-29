@@ -1,7 +1,7 @@
 import kotlinx.serialization.Serializable
 
 @Serializable
-class Funcionario(
+data class Funcionario(
     val idFuncionario: Int = 0,
     val pessoa: Pessoa
 ) {

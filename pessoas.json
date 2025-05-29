@@ -1,0 +1,34 @@
+[
+    {
+        "idPessoa": 1,
+        "nome": "João",
+        "morada": "Rua A",
+        "contacto": 123456789,
+        "nif": 123456789,
+        "email": "asdda"
+    },
+    {
+        "idPessoa": 2,
+        "nome": "Maria",
+        "morada": "Rua B",
+        "contacto": 987654321,
+        "nif": 987654321,
+        "email": "asdda"
+    },
+    {
+        "idPessoa": 3,
+        "nome": "Pedro",
+        "morada": "Rua C",
+        "contacto": 123456789,
+        "nif": 123456789,
+        "email": "asdda"
+    },
+    {
+        "idPessoa": 4,
+        "nome": "Ana",
+        "morada": "Rua D",
+        "contacto": 987654321,
+        "nif": 987654321,
+        "email": "asdda"
+    }
+]

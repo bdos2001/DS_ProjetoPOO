@@ -1,7 +1,7 @@
 import kotlinx.serialization.Serializable
 
 @Serializable
-class Marca(
+data class Marca(
     val id: Int,
     var nome: String
 ){
