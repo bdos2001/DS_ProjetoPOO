@@ -6,7 +6,7 @@ fun menuAreaFuncionarios() {
         println("2. Listar funcionários")
         println("3. Editar funcionário")
         println("4. Remover funcionário")
-        println("0. Voltar ao menu principal")
+        println("0. Voltar ao menu de admin")
         print("Escolha uma opção: ")
 
         opcFuncionario = readLine()!!.toInt()

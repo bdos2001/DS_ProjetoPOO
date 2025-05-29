@@ -10,6 +10,8 @@ var listaPessoas: MutableList<Pessoa> = mutableListOf()
 var listaCarros: MutableList<Carro> = mutableListOf()
 var listaMarcas: MutableList<Marca> = mutableListOf()
 var listaModelos: MutableList<Modelo> = mutableListOf()
+var listaPecas: MutableList<Pecas> = mutableListOf()
+var listaTipoPecas: MutableList<tipoPeca> = mutableListOf()
 
 fun guardarFicheiros() {
     val json = Json { prettyPrint = true }
@@ -20,6 +22,8 @@ fun guardarFicheiros() {
     File("carros.json").writeText(json.encodeToString(listaCarros))
     File("marcas.json").writeText(json.encodeToString(listaMarcas))
     File("modelos.json").writeText(json.encodeToString(listaModelos))
+    File("pecas.json").writeText(json.encodeToString(listaPecas))
+    File("tipoPecas.json").writeText(json.encodeToString(listaTipoPecas))
 
     println("Dados guardados com sucesso!")
 }
@@ -34,6 +38,8 @@ fun carregarFicheiros() {
         listaCarros = File("carros.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
         listaMarcas = File("marcas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
         listaModelos = File("modelos.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaPecas = File("pecas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaTipoPecas = File("tipoPecas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
 
         println("Dados carregados com sucesso!")
     } catch (e: Exception) {
@@ -43,11 +49,10 @@ fun carregarFicheiros() {
 
 fun menu() {
     println("Bem vindo ao sistema de controlo de peças!")
-    println("1. Área de Clientes")
-    println("2. Área dos funcionários")
-    println("3. Área de Carros")
-    println("4. Área de Peças/Vendas")
-    println("5. Área de Fornecedores/Encomendas")
+    println("1. Área de Carros e Cliente")
+    println("2. Área de Peças/Vendas")
+    println("3. Área de Fornecedores/Encomendas")
+    println("9. Admin")
     println("0. Sair")
     print("Escolha uma opção: ")
 }
@@ -67,11 +72,10 @@ fun main() {
         opcMenu = readLine()!!.toInt()
         cls()
         when (opcMenu) {
-            1 -> menuClientes()
-            2 -> menuAreaFuncionarios()
-            3 -> menuAreaCarros()
-            4 -> println("Peças/Vendas")
+            1 -> menuCarroouCliente()
+            2 -> menuPecasVendas()
             5 -> println("Fornecedores/Encomendas")
+            9 -> menuAdmin()
             0 -> {
                 println("A encerrar o programa")
                 guardarFicheiros()
@@ -90,5 +94,20 @@ fun mostrarPessoas() {
             else -> "Não especificado"
         }
         println("ID Pessoa: ${pessoa.idPessoa}, Nome: ${pessoa.nome}, Tipo: $tipo")
+    }
+}
+
+fun menuCarroouCliente() {
+    println("1. Área de Carros")
+    println("2. Área de Clientes")
+    println("0. Voltar")
+    print("Escolha uma opção: ")
+    val opc = readLine()!!.toInt()
+    cls()
+    when (opc) {
+        1 -> menuAreaCarros()
+        2 -> menuClientes()
+        0 -> return
+        else -> println("Opção inválida")
     }
 }

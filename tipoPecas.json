@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nome": "Motor"
+    },
+    {
+        "id": 2,
+        "nome": "Suspensão"
+    },
+    {
+        "id": 3,
+        "nome": "Travões"
+    },
+    {
+        "id": 4,
+        "nome": "Transmissão"
+    },
+    {
+        "id": 5,
+        "nome": "Escape"
+    }
+]

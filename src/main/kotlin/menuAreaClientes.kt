@@ -7,7 +7,7 @@ fun menuClientes() {
         println("3. Editar cliente")
         println("4. Remover cliente")
         println("5. Mostrar carros do cliente")
-        println("0. Voltar ao menu principal")
+        println("0. Voltar ao menu anterior")
         print("Escolha uma opção: ")
 
         opcCliente = readLine()!!.toInt()
