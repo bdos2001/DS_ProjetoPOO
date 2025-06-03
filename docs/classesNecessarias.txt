@@ -1,0 +1,16 @@
+Pessoa
+	Cliente
+	Funcionário
+Carros
+Marca
+Modelo
+
+
+Pecas
+	Tipo de Peça
+Fornecedor
+EncomendasFornecedor
+ConfirmaPgaamentoFornedor
+ComprasCliente
+ConfirmaPagamentoCliente
+
