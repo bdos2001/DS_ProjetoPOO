@@ -274,7 +274,7 @@ fun adicionarAoCarrinho(){
                 println("${quantidade} unidade(s) da peça '${peca.nome}' adicionada(s) ao carrinho com sucesso!")
             }
         } else {
-            println("Desculpe, não há estoque suficiente. Estoque disponível: ${peca.stock}")
+            println("Desculpe, não há stock suficiente. Stock disponível: ${peca.stock}")
         }
     } else {
         println("Peça com ID $idPeca não encontrada.")
@@ -334,7 +334,7 @@ fun editarItemCarrinho() {
 
     val item = carrinho[itemIndex]
     println("\nItem selecionado: ${item.peca.nome} - ${item.quantidade} unidade(s)")
-    print("Digite a nova quantidade (estoque disponível: ${item.peca.stock}): ")
+    print("Digite a nova quantidade (Stock disponível: ${item.peca.stock}): ")
     val novaQuantidade = readLine()!!.toInt()
 
     if (novaQuantidade <= 0) {
@@ -345,7 +345,7 @@ fun editarItemCarrinho() {
     }
 
     if (novaQuantidade > item.peca.stock) {
-        println("Desculpe, não há estoque suficiente. Estoque disponível: ${item.peca.stock}")
+        println("Desculpe, não há stock suficiente. Stock disponível: ${item.peca.stock}")
         println("\nPressione Enter para continuar...")
         readLine()
         return
