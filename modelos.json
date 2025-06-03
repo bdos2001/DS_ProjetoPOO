@@ -30,5 +30,357 @@
             "id": 3,
             "nome": "Honda"
         }
+    },
+    {
+        "id": 5,
+        "nome": "Leon",
+        "marca": {
+            "id": 1,
+            "nome": "Seat"
+        }
+    },
+    {
+        "id": 6,
+        "nome": "A4",
+        "marca": {
+            "id": 2,
+            "nome": "Audi"
+        }
+    },
+    {
+        "id": 7,
+        "nome": "A6",
+        "marca": {
+            "id": 2,
+            "nome": "Audi"
+        }
+    },
+    {
+        "id": 8,
+        "nome": "Q5",
+        "marca": {
+            "id": 2,
+            "nome": "Audi"
+        }
+    },
+    {
+        "id": 9,
+        "nome": "Accord",
+        "marca": {
+            "id": 3,
+            "nome": "Honda"
+        }
+    },
+    {
+        "id": 10,
+        "nome": "CR-V",
+        "marca": {
+            "id": 3,
+            "nome": "Honda"
+        }
+    },
+    {
+        "id": 11,
+        "nome": "Corolla",
+        "marca": {
+            "id": 4,
+            "nome": "Toyota"
+        }
+    },
+    {
+        "id": 12,
+        "nome": "Camry",
+        "marca": {
+            "id": 4,
+            "nome": "Toyota"
+        }
+    },
+    {
+        "id": 13,
+        "nome": "RAV4",
+        "marca": {
+            "id": 4,
+            "nome": "Toyota"
+        }
+    },
+    {
+        "id": 14,
+        "nome": "Série 3",
+        "marca": {
+            "id": 5,
+            "nome": "BMW"
+        }
+    },
+    {
+        "id": 15,
+        "nome": "Série 5",
+        "marca": {
+            "id": 5,
+            "nome": "BMW"
+        }
+    },
+    {
+        "id": 16,
+        "nome": "X5",
+        "marca": {
+            "id": 5,
+            "nome": "BMW"
+        }
+    },
+    {
+        "id": 17,
+        "nome": "Classe C",
+        "marca": {
+            "id": 6,
+            "nome": "Mercedes-Benz"
+        }
+    },
+    {
+        "id": 18,
+        "nome": "Classe E",
+        "marca": {
+            "id": 6,
+            "nome": "Mercedes-Benz"
+        }
+    },
+    {
+        "id": 19,
+        "nome": "GLC",
+        "marca": {
+            "id": 6,
+            "nome": "Mercedes-Benz"
+        }
+    },
+    {
+        "id": 20,
+        "nome": "Golf",
+        "marca": {
+            "id": 7,
+            "nome": "Volkswagen"
+        }
+    },
+    {
+        "id": 21,
+        "nome": "Passat",
+        "marca": {
+            "id": 7,
+            "nome": "Volkswagen"
+        }
+    },
+    {
+        "id": 22,
+        "nome": "Tiguan",
+        "marca": {
+            "id": 7,
+            "nome": "Volkswagen"
+        }
+    },
+    {
+        "id": 23,
+        "nome": "Focus",
+        "marca": {
+            "id": 8,
+            "nome": "Ford"
+        }
+    },
+    {
+        "id": 24,
+        "nome": "Mustang",
+        "marca": {
+            "id": 8,
+            "nome": "Ford"
+        }
+    },
+    {
+        "id": 25,
+        "nome": "Cruze",
+        "marca": {
+            "id": 9,
+            "nome": "Chevrolet"
+        }
+    },
+    {
+        "id": 26,
+        "nome": "Malibu",
+        "marca": {
+            "id": 9,
+            "nome": "Chevrolet"
+        }
+    },
+    {
+        "id": 27,
+        "nome": "Altima",
+        "marca": {
+            "id": 10,
+            "nome": "Nissan"
+        }
+    },
+    {
+        "id": 28,
+        "nome": "Sentra",
+        "marca": {
+            "id": 10,
+            "nome": "Nissan"
+        }
+    },
+    {
+        "id": 29,
+        "nome": "Elantra",
+        "marca": {
+            "id": 11,
+            "nome": "Hyundai"
+        }
+    },
+    {
+        "id": 30,
+        "nome": "Tucson",
+        "marca": {
+            "id": 11,
+            "nome": "Hyundai"
+        }
+    },
+    {
+        "id": 31,
+        "nome": "Optima",
+        "marca": {
+            "id": 12,
+            "nome": "Kia"
+        }
+    },
+    {
+        "id": 32,
+        "nome": "Sportage",
+        "marca": {
+            "id": 12,
+            "nome": "Kia"
+        }
+    },
+    {
+        "id": 33,
+        "nome": "Mazda3",
+        "marca": {
+            "id": 13,
+            "nome": "Mazda"
+        }
+    },
+    {
+        "id": 34,
+        "nome": "CX-5",
+        "marca": {
+            "id": 13,
+            "nome": "Mazda"
+        }
+    },
+    {
+        "id": 35,
+        "nome": "Impreza",
+        "marca": {
+            "id": 14,
+            "nome": "Subaru"
+        }
+    },
+    {
+        "id": 36,
+        "nome": "Forester",
+        "marca": {
+            "id": 14,
+            "nome": "Subaru"
+        }
+    },
+    {
+        "id": 37,
+        "nome": "S60",
+        "marca": {
+            "id": 15,
+            "nome": "Volvo"
+        }
+    },
+    {
+        "id": 38,
+        "nome": "XC60",
+        "marca": {
+            "id": 15,
+            "nome": "Volvo"
+        }
+    },
+    {
+        "id": 39,
+        "nome": "911",
+        "marca": {
+            "id": 16,
+            "nome": "Porsche"
+        }
+    },
+    {
+        "id": 40,
+        "nome": "Cayenne",
+        "marca": {
+            "id": 16,
+            "nome": "Porsche"
+        }
+    },
+    {
+        "id": 41,
+        "nome": "500",
+        "marca": {
+            "id": 17,
+            "nome": "Fiat"
+        }
+    },
+    {
+        "id": 42,
+        "nome": "Tipo",
+        "marca": {
+            "id": 17,
+            "nome": "Fiat"
+        }
+    },
+    {
+        "id": 43,
+        "nome": "Clio",
+        "marca": {
+            "id": 18,
+            "nome": "Renault"
+        }
+    },
+    {
+        "id": 44,
+        "nome": "Megane",
+        "marca": {
+            "id": 18,
+            "nome": "Renault"
+        }
+    },
+    {
+        "id": 45,
+        "nome": "208",
+        "marca": {
+            "id": 19,
+            "nome": "Peugeot"
+        }
+    },
+    {
+        "id": 46,
+        "nome": "308",
+        "marca": {
+            "id": 19,
+            "nome": "Peugeot"
+        }
+    },
+    {
+        "id": 47,
+        "nome": "C3",
+        "marca": {
+            "id": 20,
+            "nome": "Citroën"
+        }
+    },
+    {
+        "id": 48,
+        "nome": "C4",
+        "marca": {
+            "id": 20,
+            "nome": "Citroën"
+        }
     }
 ]

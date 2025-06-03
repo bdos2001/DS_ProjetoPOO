@@ -8,7 +8,40 @@
         },
         "preco": 5000.0,
         "stock": 10,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 16,
+                "nome": "X5",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 19,
+                "nome": "GLC",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 24,
+                "nome": "Mustang",
+                "marca": {
+                    "id": 8,
+                    "nome": "Ford"
+                }
+            },
+            {
+                "id": 40,
+                "nome": "Cayenne",
+                "marca": {
+                    "id": 16,
+                    "nome": "Porsche"
+                }
+            }
+        ]
     },
     {
         "id": 2,
@@ -19,7 +52,56 @@
         },
         "preco": 300.0,
         "stock": 20,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
     },
     {
         "id": 3,
@@ -30,7 +112,56 @@
         },
         "preco": 150.0,
         "stock": 15,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
     },
     {
         "id": 4,
@@ -41,7 +172,56 @@
         },
         "preco": 2000.0,
         "stock": 5,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            },
+            {
+                "id": 23,
+                "nome": "Focus",
+                "marca": {
+                    "id": 8,
+                    "nome": "Ford"
+                }
+            },
+            {
+                "id": 43,
+                "nome": "Clio",
+                "marca": {
+                    "id": 18,
+                    "nome": "Renault"
+                }
+            }
+        ]
     },
     {
         "id": 5,
@@ -52,7 +232,48 @@
         },
         "preco": 3000.0,
         "stock": 3,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 7,
+                "nome": "A6",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 15,
+                "nome": "Série 5",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 18,
+                "nome": "Classe E",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
     },
     {
         "id": 6,
@@ -63,7 +284,48 @@
         },
         "preco": 500.0,
         "stock": 10,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
     },
     {
         "id": 7,
@@ -74,7 +336,40 @@
         },
         "preco": 800.0,
         "stock": 7,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
     },
     {
         "id": 8,
@@ -85,7 +380,40 @@
         },
         "preco": 4000.0,
         "stock": 8,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 7,
+                "nome": "A6",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 26,
+                "nome": "Malibu",
+                "marca": {
+                    "id": 9,
+                    "nome": "Chevrolet"
+                }
+            }
+        ]
     },
     {
         "id": 9,
@@ -96,7 +424,32 @@
         },
         "preco": 10000.0,
         "stock": 2,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 13,
+                "nome": "RAV4",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 19,
+                "nome": "GLC",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 38,
+                "nome": "XC60",
+                "marca": {
+                    "id": 15,
+                    "nome": "Volvo"
+                }
+            }
+        ]
     },
     {
         "id": 10,
@@ -107,7 +460,56 @@
         },
         "preco": 200.0,
         "stock": 15,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            },
+            {
+                "id": 43,
+                "nome": "Clio",
+                "marca": {
+                    "id": 18,
+                    "nome": "Renault"
+                }
+            },
+            {
+                "id": 45,
+                "nome": "208",
+                "marca": {
+                    "id": 19,
+                    "nome": "Peugeot"
+                }
+            }
+        ]
     },
     {
         "id": 11,
@@ -118,7 +520,48 @@
         },
         "preco": 350.0,
         "stock": 12,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 8,
+                "nome": "Q5",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 16,
+                "nome": "X5",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 19,
+                "nome": "GLC",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 22,
+                "nome": "Tiguan",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            },
+            {
+                "id": 30,
+                "nome": "Tucson",
+                "marca": {
+                    "id": 11,
+                    "nome": "Hyundai"
+                }
+            }
+        ]
     },
     {
         "id": 12,
@@ -129,7 +572,88 @@
         },
         "preco": 100.0,
         "stock": 25,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            },
+            {
+                "id": 23,
+                "nome": "Focus",
+                "marca": {
+                    "id": 8,
+                    "nome": "Ford"
+                }
+            }
+        ]
     },
     {
         "id": 13,
@@ -140,6 +664,1323 @@
         },
         "preco": 250.0,
         "stock": 10,
-        "compatibilidadeModelos": []
+        "compatibilidadeModelos": [
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 15,
+                "nome": "Série 5",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 18,
+                "nome": "Classe E",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "nome": "Filtro de Ar",
+        "tipoPeca": {
+            "id": 6,
+            "nome": "Filtros"
+        },
+        "preco": 30.0,
+        "stock": 50,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "nome": "Filtro de Óleo",
+        "tipoPeca": {
+            "id": 6,
+            "nome": "Filtros"
+        },
+        "preco": 20.0,
+        "stock": 60,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 7,
+                "nome": "A6",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            },
+            {
+                "id": 23,
+                "nome": "Focus",
+                "marca": {
+                    "id": 8,
+                    "nome": "Ford"
+                }
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "nome": "Filtro de Combustível",
+        "tipoPeca": {
+            "id": 6,
+            "nome": "Filtros"
+        },
+        "preco": 25.0,
+        "stock": 45,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "nome": "Bateria 12V",
+        "tipoPeca": {
+            "id": 7,
+            "nome": "Elétrico"
+        },
+        "preco": 120.0,
+        "stock": 30,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "nome": "Alternador",
+        "tipoPeca": {
+            "id": 7,
+            "nome": "Elétrico"
+        },
+        "preco": 350.0,
+        "stock": 15,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "nome": "Motor de Arranque",
+        "tipoPeca": {
+            "id": 7,
+            "nome": "Elétrico"
+        },
+        "preco": 280.0,
+        "stock": 18,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "nome": "Radiador",
+        "tipoPeca": {
+            "id": 8,
+            "nome": "Refrigeração"
+        },
+        "preco": 180.0,
+        "stock": 20,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "nome": "Bomba de Água",
+        "tipoPeca": {
+            "id": 8,
+            "nome": "Refrigeração"
+        },
+        "preco": 150.0,
+        "stock": 25,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "nome": "Termóstato",
+        "tipoPeca": {
+            "id": 8,
+            "nome": "Refrigeração"
+        },
+        "preco": 50.0,
+        "stock": 40,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "nome": "Vela de Ignição",
+        "tipoPeca": {
+            "id": 9,
+            "nome": "Ignição"
+        },
+        "preco": 15.0,
+        "stock": 100,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            },
+            {
+                "id": 23,
+                "nome": "Focus",
+                "marca": {
+                    "id": 8,
+                    "nome": "Ford"
+                }
+            },
+            {
+                "id": 25,
+                "nome": "Cruze",
+                "marca": {
+                    "id": 9,
+                    "nome": "Chevrolet"
+                }
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "nome": "Bobina de Ignição",
+        "tipoPeca": {
+            "id": 9,
+            "nome": "Ignição"
+        },
+        "preco": 80.0,
+        "stock": 30,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "nome": "Sensor de Oxigênio",
+        "tipoPeca": {
+            "id": 10,
+            "nome": "Sensores"
+        },
+        "preco": 120.0,
+        "stock": 25,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "nome": "Sensor de Temperatura",
+        "tipoPeca": {
+            "id": 10,
+            "nome": "Sensores"
+        },
+        "preco": 60.0,
+        "stock": 35,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "nome": "Sensor de Velocidade",
+        "tipoPeca": {
+            "id": 10,
+            "nome": "Sensores"
+        },
+        "preco": 90.0,
+        "stock": 20,
+        "compatibilidadeModelos": [
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "nome": "Pneu 205/55 R16",
+        "tipoPeca": {
+            "id": 11,
+            "nome": "Pneus"
+        },
+        "preco": 100.0,
+        "stock": 40,
+        "compatibilidadeModelos": [
+            {
+                "id": 1,
+                "nome": "Ibiza",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 3,
+                "nome": "Toledo",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 4,
+                "nome": "Civic",
+                "marca": {
+                    "id": 3,
+                    "nome": "Honda"
+                }
+            },
+            {
+                "id": 5,
+                "nome": "Leon",
+                "marca": {
+                    "id": 1,
+                    "nome": "Seat"
+                }
+            },
+            {
+                "id": 11,
+                "nome": "Corolla",
+                "marca": {
+                    "id": 4,
+                    "nome": "Toyota"
+                }
+            },
+            {
+                "id": 20,
+                "nome": "Golf",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "nome": "Pneu 225/45 R17",
+        "tipoPeca": {
+            "id": 11,
+            "nome": "Pneus"
+        },
+        "preco": 130.0,
+        "stock": 30,
+        "compatibilidadeModelos": [
+            {
+                "id": 2,
+                "nome": "A3",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 6,
+                "nome": "A4",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 14,
+                "nome": "Série 3",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 17,
+                "nome": "Classe C",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "nome": "Pneu 235/55 R18",
+        "tipoPeca": {
+            "id": 11,
+            "nome": "Pneus"
+        },
+        "preco": 160.0,
+        "stock": 25,
+        "compatibilidadeModelos": [
+            {
+                "id": 8,
+                "nome": "Q5",
+                "marca": {
+                    "id": 2,
+                    "nome": "Audi"
+                }
+            },
+            {
+                "id": 16,
+                "nome": "X5",
+                "marca": {
+                    "id": 5,
+                    "nome": "BMW"
+                }
+            },
+            {
+                "id": 19,
+                "nome": "GLC",
+                "marca": {
+                    "id": 6,
+                    "nome": "Mercedes-Benz"
+                }
+            },
+            {
+                "id": 22,
+                "nome": "Tiguan",
+                "marca": {
+                    "id": 7,
+                    "nome": "Volkswagen"
+                }
+            }
+        ]
     }
 ]

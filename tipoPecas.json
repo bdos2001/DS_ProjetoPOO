@@ -18,5 +18,29 @@
     {
         "id": 5,
         "nome": "Escape"
+    },
+    {
+        "id": 6,
+        "nome": "Filtros"
+    },
+    {
+        "id": 7,
+        "nome": "Elétrico"
+    },
+    {
+        "id": 8,
+        "nome": "Refrigeração"
+    },
+    {
+        "id": 9,
+        "nome": "Ignição"
+    },
+    {
+        "id": 10,
+        "nome": "Sensores"
+    },
+    {
+        "id": 11,
+        "nome": "Pneus"
     }
 ]

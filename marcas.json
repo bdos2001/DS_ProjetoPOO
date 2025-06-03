@@ -10,5 +10,73 @@
     {
         "id": 3,
         "nome": "Honda"
+    },
+    {
+        "id": 4,
+        "nome": "Toyota"
+    },
+    {
+        "id": 5,
+        "nome": "BMW"
+    },
+    {
+        "id": 6,
+        "nome": "Mercedes-Benz"
+    },
+    {
+        "id": 7,
+        "nome": "Volkswagen"
+    },
+    {
+        "id": 8,
+        "nome": "Ford"
+    },
+    {
+        "id": 9,
+        "nome": "Chevrolet"
+    },
+    {
+        "id": 10,
+        "nome": "Nissan"
+    },
+    {
+        "id": 11,
+        "nome": "Hyundai"
+    },
+    {
+        "id": 12,
+        "nome": "Kia"
+    },
+    {
+        "id": 13,
+        "nome": "Mazda"
+    },
+    {
+        "id": 14,
+        "nome": "Subaru"
+    },
+    {
+        "id": 15,
+        "nome": "Volvo"
+    },
+    {
+        "id": 16,
+        "nome": "Porsche"
+    },
+    {
+        "id": 17,
+        "nome": "Fiat"
+    },
+    {
+        "id": 18,
+        "nome": "Renault"
+    },
+    {
+        "id": 19,
+        "nome": "Peugeot"
+    },
+    {
+        "id": 20,
+        "nome": "Citroën"
     }
 ]

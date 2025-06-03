@@ -10,6 +10,10 @@ data class Peca (
     var compatibilidadeModelos: List<Modelo>
 ){
     override fun toString(): String {
+        val compatibilidadeStr = compatibilidadeModelos.joinToString("\n") { modelo ->
+            "        - ${modelo.nome} (${modelo.marca.nome})"
+        }
+
         return """
         ------------------------------
         Id: $id
@@ -17,6 +21,8 @@ data class Peca (
         Tipo de Peça: ${tipoPeca.nome}
         Preço: $preco
         Stock: $stock
+        Compatível com:
+$compatibilidadeStr
         ------------------------------
     """.trimIndent()
     }

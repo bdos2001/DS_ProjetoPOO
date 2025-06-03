@@ -1,6 +1,4 @@
 import java.io.File
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
 //Listas a ser inicializadas no inicio do programa
@@ -12,6 +10,7 @@ var listaMarcas: MutableList<Marca> = mutableListOf()
 var listaModelos: MutableList<Modelo> = mutableListOf()
 var listaPecas: MutableList<Peca> = mutableListOf()
 var listaTipoPecas: MutableList<TipoPeca> = mutableListOf()
+var listaComprasCliente: MutableList<ComprasCliente> = mutableListOf()
 
 fun guardarFicheiros() {
     val json = Json { prettyPrint = true }
@@ -24,6 +23,7 @@ fun guardarFicheiros() {
     File("modelos.json").writeText(json.encodeToString(listaModelos))
     File("pecas.json").writeText(json.encodeToString(listaPecas))
     File("tipoPecas.json").writeText(json.encodeToString(listaTipoPecas))
+    File("comprasCliente.json").writeText(json.encodeToString(listaComprasCliente))
 
     println("Dados guardados com sucesso!")
 }
@@ -40,6 +40,7 @@ fun carregarFicheiros() {
         listaModelos = File("modelos.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
         listaPecas = File("pecas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
         listaTipoPecas = File("tipoPecas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaComprasCliente = File("comprasCliente.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
 
         println("Dados carregados com sucesso!")
     } catch (e: Exception) {
