@@ -1,10 +1,13 @@
 fun menuPecasVendas(){
     var finalizar = false
     while (!finalizar) {
+        println("=====================================")
         println("Área de Peças/Vendas")
+        println("=====================================")
         println("1. Peças")
         println("2. Compras/Vendas")
         println("0. Sair")
+        println("=====================================")
         print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
         cls()
@@ -18,14 +21,17 @@ fun menuPecasVendas(){
 }
 
 fun pecas(){
-    var finalizar1 = false
-    while (!finalizar1) {
+    var finalizar = false
+    while (!finalizar) {
+        println("=====================================")
         println("Área de Peças")
+        println("=====================================")
         println("1. Procurar Peças")
         println("2. Adicionar peça ao Carrinho")
         println("3. Visualizar carrinho")
         println("4. Finalizar compra")
         println("0. Sair")
+        println("=====================================")
         print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
         cls()
@@ -33,21 +39,25 @@ fun pecas(){
             1 -> procurarPecas()
             2 -> println("Adicionar peça ao carrinho por ID")
             3 -> println("Visualizar carrinho")
-            0 -> finalizar1 = true
+            0 -> finalizar = true
             else -> println("Opção inválida, tente novamente.")
         }
     }
 }
 
 fun procurarPecas(){
-    var finalizar2 = false
-    while (!finalizar2) {
+    var finalizar = false
+    while (!finalizar) {
+        println("=====================================")
         println("Área de procura de peças")
+        println("=====================================")
         println("1. Procurar peça por ID")
         println("2. Procurar peças por tipo de peça")
         println("3. Procurar peças por carro")
         println("4. Procurar peças por carros de cliente")
         println("0. Sair")
+        println("=====================================")
+        print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
         cls()
         when (opcao) {
@@ -55,7 +65,7 @@ fun procurarPecas(){
             2 -> procurarPecaPorTipo()
             3 -> println("Procurar peça por carro")
             4 -> println("Procurar peça por carro de cliente")
-            0 -> finalizar2 = true
+            0 -> finalizar = true
             else -> println("Opção inválida, tente novamente.")
         }
     }

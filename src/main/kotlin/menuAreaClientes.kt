@@ -1,27 +1,30 @@
 fun menuClientes() {
-    var opcCliente: Int
-    do {
+    var finalizar = false
+    while (!finalizar) {
+        println("=====================================")
         println("Área dos Clientes")
+        println("=====================================")
         println("1. Adicionar cliente")
         println("2. Listar clientes")
         println("3. Editar cliente")
         println("4. Remover cliente")
         println("5. Mostrar carros do cliente")
         println("0. Voltar ao menu anterior")
+        println("=====================================")
         print("Escolha uma opção: ")
 
-        opcCliente = readLine()!!.toInt()
+        val opcao = readLine()!!.toInt()
         cls()
-        when (opcCliente) {
+        when (opcao) {
             1 -> adicionarCliente()
             2 -> listarClientes()
             3 -> editarCliente()
             4 -> removerCliente()
             5 -> mostrarCarrosCliente()
-            0 -> continue
-            else -> println("Opção inválida")
+            0 -> finalizar = true
+            else -> println("Opção inválida, tente novamente.")
         }
-    } while (opcCliente != 0)
+    }
 }
 
 fun adicionarCliente() {
@@ -97,9 +100,9 @@ fun editarCliente() {
                 }
                 "6" -> {
                     finalizar = true
-                    println("Edição finalizada com sucesso!")
+                    println("Cliente editado com sucesso!")
                 }
-                else -> println("Opção inválida.")
+                else -> println("Opção inválida, tente novamente.")
             }
         }
     } else {
@@ -133,7 +136,7 @@ fun removerCliente() {
         listaClientes.remove(cliente)
         listaPessoas.remove(cliente.pessoa)
         listaCarros.removeIf { it.dono.idPessoa == cliente.pessoa.idPessoa }
-        println("Cliente removido com sucesso.")
+        println("Cliente removido com sucesso!")
     } else {
         println("Cliente não encontrado.")
     }

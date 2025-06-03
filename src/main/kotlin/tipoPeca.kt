@@ -1,8 +1,7 @@
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class tipoPeca(
+data class TipoPeca(
     val id: Int,
     var nome: String
-) {
-}
+)

@@ -1,5 +1,6 @@
 fun menuAdmin() {
-    while (true) {
+    var finalizar = false
+    while (!finalizar) {
         println("=====================================")
         println("Bem-vindo ao Menu de Administração!")
         println("=====================================")
@@ -21,7 +22,7 @@ fun menuAdmin() {
             5 -> menuPecas()
             0 -> {
                 println("A sair do Menu de Administração.")
-                break
+                finalizar = true
             }
             else -> println("Opção inválida, tente novamente.")
         }
@@ -31,18 +32,21 @@ fun menuAdmin() {
 fun menuTiposPecas() {
     var finalizar = false
     while (!finalizar) {
+        println("=====================================")
         println("Área de Tipos de Peças")
+        println("=====================================")
         println("1. Adicionar Tipo de Peça")
-        println("2. Mostrar Tipos de Peças")
+        println("2. Listar Tipos de Peças")
         println("3. Editar Tipo de Peça")
         println("4. Remover Tipo de Peça")
         println("0. Sair")
+        println("=====================================")
         print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
         cls()
         when (opcao) {
             1 -> adicionarTipoPeca()
-            2 -> mostrarTiposPecas()
+            2 -> listarTiposPecas()
             3 -> editarTipoPeca()
             4 -> removerTipoPeca()
             0 -> finalizar = true
@@ -64,12 +68,12 @@ fun adicionarTipoPeca() {
 
     val idTipoPeca = if (listaTipoPecas.isEmpty()) 1 else listaTipoPecas.maxOf { it.id } + 1
 
-    val tipoPeca = tipoPeca(idTipoPeca, nomeTipoPeca)
+    val tipoPeca = TipoPeca(idTipoPeca, nomeTipoPeca)
     listaTipoPecas.add(tipoPeca)
     println("Tipo de Peça adicionado com sucesso!")
 }
 
-fun mostrarTiposPecas() {
+fun listarTiposPecas() {
     println("Listar Tipos de Peças")
     for (tipoPeca in listaTipoPecas) {
         println("ID: ${tipoPeca.id}, Nome: ${tipoPeca.nome}")
@@ -78,7 +82,7 @@ fun mostrarTiposPecas() {
 
 fun editarTipoPeca() {
     println("Editar Tipo de Peça")
-    mostrarTiposPecas()
+    listarTiposPecas()
     print("ID do Tipo de Peça: ")
     val idTipoPeca = readLine()!!.toInt()
     val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
@@ -95,7 +99,7 @@ fun editarTipoPeca() {
 
 fun removerTipoPeca() {
     println("Remover Tipo de Peça")
-    mostrarTiposPecas()
+    listarTiposPecas()
     print("ID do Tipo de Peça: ")
     val idTipoPeca = readLine()!!.toInt()
     val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
@@ -117,18 +121,21 @@ fun removerTipoPeca() {
 fun menuPecas() {
     var finalizar = false
     while (!finalizar) {
+        println("=====================================")
         println("Área de Peças")
+        println("=====================================")
         println("1. Adicionar Peça")
-        println("2. Mostrar Peças")
+        println("2. Listar Peças")
         println("3. Editar Peça")
         println("4. Remover Peça")
         println("0. Sair")
+        println("=====================================")
         print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
         cls()
         when (opcao) {
             1 -> adicionarPeca()
-            2 -> mostrarPecas()
+            2 -> listarPecas()
             3 -> editarPeca()
             4 -> removerPeca()
             0 -> finalizar = true
@@ -150,7 +157,7 @@ fun adicionarPeca() {
 
     // Selecionar tipo de peça
     println("Escolha o Tipo de Peça pelo ID:")
-    mostrarTiposPecas()
+    listarTiposPecas()
     print("ID do Tipo de Peça: ")
     val idTipoPeca = readLine()!!.toInt()
 
@@ -174,7 +181,7 @@ fun adicionarPeca() {
 
     while (adicionarMaisModelos) {
         println("Escolha um Modelo compatível pelo ID (ou 0 para terminar):")
-        mostrarModelo()
+        listarModelos()
         print("ID do Modelo (0 para terminar): ")
         val idModelo = readLine()!!.toInt()
 
@@ -193,12 +200,12 @@ fun adicionarPeca() {
 
     val idPeca = if (listaPecas.isEmpty()) 1 else listaPecas.maxOf { it.id } + 1
 
-    val peca = Pecas(idPeca, nomePeca, tipoPeca, precoPeca, stockPeca, modelosCompativeis)
+    val peca = Peca(idPeca, nomePeca, tipoPeca, precoPeca, stockPeca, modelosCompativeis)
     listaPecas.add(peca)
     println("Peça adicionada com sucesso!")
 }
 
-fun mostrarPecas() {
+fun listarPecas() {
     println("Listar Peças")
     for (peca in listaPecas) {
         println(peca)
@@ -233,7 +240,7 @@ fun editarPeca() {
             }
             2 -> {
                 println("Escolha o novo Tipo de Peça pelo ID:")
-                mostrarTiposPecas()
+                listarTiposPecas()
                 print("ID do Tipo de Peça: ")
                 val idTipoPeca = readLine()!!.toInt()
                 val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
@@ -263,7 +270,7 @@ fun editarPeca() {
 
                 while (adicionarMaisModelos) {
                     println("Escolha um Modelo compatível pelo ID (ou 0 para terminar):")
-                    mostrarModelo()
+                    listarModelos()
                     print("ID do Modelo (0 para terminar): ")
                     val idModelo = readLine()!!.toInt()
 
@@ -293,7 +300,7 @@ fun editarPeca() {
 
 fun removerPeca() {
     println("Remover Peça")
-    mostrarPecas()
+    listarPecas()
     print("ID da Peça: ")
     val idPeca = readLine()!!.toInt()
     val peca = listaPecas.find { it.id == idPeca }

@@ -1,25 +1,28 @@
 fun menuAreaFuncionarios() {
-    var opcFuncionario: Int
-    do {
-        println("Área dos funcionários")
+    var finalizar = false
+    while (!finalizar) {
+        println("=====================================")
+        println("Área dos Funcionários")
+        println("=====================================")
         println("1. Adicionar funcionário")
         println("2. Listar funcionários")
         println("3. Editar funcionário")
         println("4. Remover funcionário")
         println("0. Voltar ao menu de admin")
+        println("=====================================")
         print("Escolha uma opção: ")
 
-        opcFuncionario = readLine()!!.toInt()
+        val opcao = readLine()!!.toInt()
         cls()
-        when (opcFuncionario) {
+        when (opcao) {
             1 -> adicionarFuncionario()
             2 -> listarFuncionarios()
             3 -> editarFuncionario()
             4 -> removerFuncionario()
-            0 -> continue
-            else -> println("Opção inválida")
+            0 -> finalizar = true
+            else -> println("Opção inválida, tente novamente.")
         }
-    } while (opcFuncionario != 0)
+    }
 }
 
 fun adicionarFuncionario() {
@@ -99,9 +102,9 @@ fun editarFuncionario() {
                 }
                 "6" -> {
                     finalizar = true
-                    println("Edição finalizada com sucesso!")
+                    println("Funcionário editado com sucesso!")
                 }
-                else -> println("Opção inválida.")
+                else -> println("Opção inválida, tente novamente.")
             }
         }
     } else {

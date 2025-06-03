@@ -1,19 +1,22 @@
 fun menuAreaCarros() {
     var finalizar = false
     while (!finalizar) {
+        println("=====================================")
         println("Área de Carros")
+        println("=====================================")
         println("1. Adicionar carro")
-        println("2. Mostrar carros")
+        println("2. Listar carros")
         println("3. Editar carro")
         println("4. Remover carro")
         println("5. Marcas/Modelos")
         println("0. Sair")
+        println("=====================================")
         print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
         cls()
         when (opcao) {
             1 -> adicionarCarro()
-            2 -> mostrarCarros()
+            2 -> listarCarros()
             3 -> editarCarro()
             4 -> removerCarro()
             5 -> menuMarcasModelos()
@@ -35,7 +38,7 @@ fun adicionarCarro() {
     var marca: Marca? = null
     while (marca == null) {
         println("Escolha a Marca pelo ID:")
-        mostrarMarcas()
+        listarMarcas()
         print("ID da Marca: ")
         val idMarca = readLine()!!.toInt()
         marca = listaMarcas.find { it.id == idMarca }
@@ -52,7 +55,7 @@ fun adicionarCarro() {
         val idModelo = readLine()!!.toInt()
         modelo = listaModelos.find { it.id == idModelo && it.marca.id == marca.id }
         if (modelo == null) {
-            println("Modelo não encontrado. Tente novamente.")
+            println("Modelo não encontrado.")
         }
     }
 
@@ -62,12 +65,12 @@ fun adicionarCarro() {
     var dono: Pessoa? = null
     while (dono == null) {
         println("Escolha o Dono pelo ID:")
-        mostrarPessoas()
+        listarPessoas()
         print("ID do Dono: ")
         val idDono = readLine()!!.toInt()
         dono = listaPessoas.find { it.idPessoa == idDono }
         if (dono == null) {
-            println("Dono não encontrado. Tente novamente.")
+            println("Dono não encontrado.")
         }
     }
 
@@ -76,7 +79,7 @@ fun adicionarCarro() {
     println("Carro adicionado com sucesso!")
 }
 
-fun mostrarCarros() {
+fun listarCarros() {
     println("Listar Carros")
     for (carro in listaCarros) {
         println(carro)
@@ -99,7 +102,7 @@ fun editarCarro() {
         }
         2 -> {
             println("Escolha o Dono pelo ID:")
-            mostrarPessoas()
+            listarPessoas()
             print("ID do Dono: ")
             val idDono = readLine()!!.toInt()
             val dono = listaPessoas.find { it.idPessoa == idDono }
@@ -140,7 +143,7 @@ fun editarCarro() {
                 }
                 2 -> {
                     println("Escolha a marca pelo ID:")
-                    mostrarMarcas()
+                    listarMarcas()
                     print("ID da Marca: ")
                     val idMarca = readLine()!!.toInt()
                     val marca = listaMarcas.find { it.id == idMarca }
@@ -167,7 +170,7 @@ fun editarCarro() {
                 }
                 4 -> {
                     println("Escolha o Dono pelo ID:")
-                    mostrarPessoas()
+                    listarPessoas()
                     print("ID do Dono: ")
                     val idDono = readLine()!!.toInt()
                     val dono = listaPessoas.find { it.idPessoa == idDono }
@@ -203,7 +206,7 @@ fun removerCarro() {
         }
         2 -> {
             println("Escolha o Dono pelo ID:")
-            mostrarPessoas()
+            listarPessoas()
             print("ID do Dono: ")
             val idDono = readLine()!!.toInt()
             val dono = listaPessoas.find { it.idPessoa == idDono }

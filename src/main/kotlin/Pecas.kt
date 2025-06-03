@@ -1,10 +1,10 @@
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Pecas (
+data class Peca (
     val id: Int,
     var nome: String,
-    var tipoPeca: tipoPeca,
+    var tipoPeca: TipoPeca,
     var preco: Double,
     var stock: Int,
     var compatibilidadeModelos: List<Modelo>
@@ -21,4 +21,3 @@ data class Pecas (
     """.trimIndent()
     }
 }
-

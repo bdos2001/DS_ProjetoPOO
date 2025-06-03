@@ -10,8 +10,8 @@ var listaPessoas: MutableList<Pessoa> = mutableListOf()
 var listaCarros: MutableList<Carro> = mutableListOf()
 var listaMarcas: MutableList<Marca> = mutableListOf()
 var listaModelos: MutableList<Modelo> = mutableListOf()
-var listaPecas: MutableList<Pecas> = mutableListOf()
-var listaTipoPecas: MutableList<tipoPeca> = mutableListOf()
+var listaPecas: MutableList<Peca> = mutableListOf()
+var listaTipoPecas: MutableList<TipoPeca> = mutableListOf()
 
 fun guardarFicheiros() {
     val json = Json { prettyPrint = true }
@@ -48,12 +48,15 @@ fun carregarFicheiros() {
 }
 
 fun menu() {
+    println("=====================================")
     println("Bem vindo ao sistema de controlo de peças!")
+    println("=====================================")
     println("1. Área de Carros e Cliente")
     println("2. Área de Peças/Vendas")
     println("3. Área de Fornecedores/Encomendas")
     println("9. Admin")
     println("0. Sair")
+    println("=====================================")
     print("Escolha uma opção: ")
 }
 
@@ -80,13 +83,13 @@ fun main() {
                 println("A encerrar o programa")
                 guardarFicheiros()
             }
-            else -> println("Opção inválida")
+            else -> println("Opção inválida, tente novamente.")
         }
 
     }
 }
 
-fun mostrarPessoas() {
+fun listarPessoas() {
     for (pessoa in listaPessoas) {
         val tipo = when {
             listaClientes.any { it.pessoa.idPessoa == pessoa.idPessoa } -> "Cliente"
@@ -98,9 +101,13 @@ fun mostrarPessoas() {
 }
 
 fun menuCarroouCliente() {
+    println("=====================================")
+    println("Área de Carros e Clientes")
+    println("=====================================")
     println("1. Área de Carros")
     println("2. Área de Clientes")
     println("0. Voltar")
+    println("=====================================")
     print("Escolha uma opção: ")
     val opc = readLine()!!.toInt()
     cls()
@@ -108,6 +115,6 @@ fun menuCarroouCliente() {
         1 -> menuAreaCarros()
         2 -> menuClientes()
         0 -> return
-        else -> println("Opção inválida")
+        else -> println("Opção inválida, tente novamente.")
     }
 }

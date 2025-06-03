@@ -1,11 +1,14 @@
-
 fun menuMarcasModelos() {
     var finalizar = false
     while (!finalizar) {
+        println("=====================================")
         println("Área de Marcas/Modelos")
+        println("=====================================")
         println("1. Marcas")
         println("2. Modelos")
         println("0. Sair")
+        println("=====================================")
+        print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
         cls()
         when (opcao) {
@@ -20,18 +23,21 @@ fun menuMarcasModelos() {
 fun menuMarcas() {
     var finalizar = false
     while (!finalizar) {
+        println("=====================================")
         println("Área de Marcas")
+        println("=====================================")
         println("1. Adicionar Marca")
-        println("2. Mostrar Marcas")
+        println("2. Listar Marcas")
         println("3. Editar Marca")
         println("4. Remover Marca")
         println("0. Sair")
+        println("=====================================")
         print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
 
         when (opcao) {
             1 -> adicionarMarca()
-            2 -> mostrarMarcas()
+            2 -> listarMarcas()
             3 -> editarMarca()
             4 -> removerMarca()
             0 -> finalizar = true
@@ -57,7 +63,7 @@ fun adicionarMarca() {
     println("Marca adicionada com sucesso!")
 }
 
-fun mostrarMarcas() {
+fun listarMarcas() {
     println("Listar Marcas")
     for (marca in listaMarcas) {
         println(marca)
@@ -82,7 +88,7 @@ fun editarMarca() {
 
 fun removerMarca(){
     println("Remover Marca")
-    mostrarMarcas()
+    listarMarcas()
     print("ID da Marca: ")
     val idMarca = readLine()!!.toInt()
     val marca = listaMarcas.find { it.id == idMarca }
@@ -98,18 +104,21 @@ fun removerMarca(){
 fun menuModelos() {
     var finalizar = false
     while (!finalizar) {
+        println("=====================================")
         println("Área de Modelos")
+        println("=====================================")
         println("1. Adicionar Modelo")
         println("2. Listar Modelos")
         println("3. Editar Modelo")
         println("4. Remover Modelo")
         println("0. Sair")
+        println("=====================================")
         print("Escolha uma opção: ")
         val opcao = readLine()!!.toInt()
 
         when (opcao) {
             1 -> adicionarModelo()
-            2 -> mostrarModelo()
+            2 -> listarModelos()
             3 -> editarModelo()
             4 -> removerModelo()
             0 -> finalizar = true
@@ -130,7 +139,7 @@ fun adicionarModelo() {
     }
 
     println("Escolha a Marca pelo ID:")
-    mostrarMarcas()
+    listarMarcas()
     print("ID da Marca: ")
     val idMarca = readLine()!!.toInt()
 
@@ -146,7 +155,7 @@ fun adicionarModelo() {
     }
 }
 
-fun mostrarModelo() {
+fun listarModelos() {
     println("Listar Modelos")
     for (modelo in listaModelos) {
         println(modelo)
@@ -171,7 +180,7 @@ fun editarModelo() {
 
 fun removerModelo(){
     println("Remover Modelo")
-    mostrarModelo()
+    listarModelos()
     print("ID do Modelo: ")
     val idModelo = readLine()!!.toInt()
     val modelo = listaModelos.find { it.id == idModelo }
