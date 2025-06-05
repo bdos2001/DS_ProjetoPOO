@@ -29,24 +29,74 @@ fun menuClientes() {
 
 fun adicionarCliente() {
     println("Adicionar cliente")
-    print("Nome: ")
-    val nome = readLine()!!
-    print("Morada: ")
-    val morada = readLine()!!
-    print("Contacto: ")
-    val contacto = readLine()!!.toInt()
-    print("NIF: ")
-    val nif = readLine()!!.toInt()
-    print("Email: ")
-    val email = readLine()!!
 
-    val idPessoa = if (listaPessoas.isEmpty()) 1 else listaPessoas.maxOf { it.idPessoa } + 1
-    val pessoa = Pessoa(idPessoa, nome, morada, contacto, nif, email)
-    listaPessoas.add(pessoa)
+    // Perguntar se o cliente já é funcionário
+    println("O cliente já é funcionário? (S/N)")
+    val resposta = readLine()!!.uppercase()
 
+    val pessoa: Pessoa
+
+    if (resposta == "S") {
+        // Se for funcionário, pedir o ID do funcionário
+        print("ID do funcionário: ")
+        val idFuncionario = readLine()!!.toInt()
+        val funcionario = listaFuncionarios.find { it.idFuncionario == idFuncionario }
+
+        if (funcionario != null) {
+            // Usar a pessoa associada ao funcionário
+            pessoa = funcionario.pessoa
+            println("Usando dados do funcionário existente: ${pessoa.nome}")
+
+            // Verificar se já existe um cliente com o ID da Pessoa desse funcionário
+            val clienteExistente = listaClientes.find { it.pessoa.idPessoa == pessoa.idPessoa }
+            if (clienteExistente != null) {
+                println("ATENÇÃO: Já existe um cliente com o ID de Pessoa ${pessoa.idPessoa}.")
+                println("Cliente existente: ID ${clienteExistente.idCliente}, Nome: ${clienteExistente.pessoa.nome}")
+                println("Operação cancelada.")
+                return
+            }
+        } else {
+            println("Funcionário não encontrado. Criando novo cliente com novos dados.")
+            // Criar nova pessoa
+            print("Nome: ")
+            val nome = readLine()!!
+            print("Morada: ")
+            val morada = readLine()!!
+            print("Contacto: ")
+            val contacto = readLine()!!.toInt()
+            print("NIF: ")
+            val nif = readLine()!!.toInt()
+            print("Email: ")
+            val email = readLine()!!
+
+            val idPessoa = if (listaPessoas.isEmpty()) 1 else listaPessoas.maxOf { it.idPessoa } + 1
+            pessoa = Pessoa(idPessoa, nome, morada, contacto, nif, email)
+            listaPessoas.add(pessoa)
+        }
+    } else {
+        // Criar nova pessoa
+        print("Nome: ")
+        val nome = readLine()!!
+        print("Morada: ")
+        val morada = readLine()!!
+        print("Contacto: ")
+        val contacto = readLine()!!.toInt()
+        print("NIF: ")
+        val nif = readLine()!!.toInt()
+        print("Email: ")
+        val email = readLine()!!
+
+        val idPessoa = if (listaPessoas.isEmpty()) 1 else listaPessoas.maxOf { it.idPessoa } + 1
+        pessoa = Pessoa(idPessoa, nome, morada, contacto, nif, email)
+        listaPessoas.add(pessoa)
+    }
+
+    // Criar novo cliente com a pessoa (existente ou nova)
     val idCliente = if (listaClientes.isEmpty()) 1 else listaClientes.maxOf { it.idCliente } + 1
     val cliente = Cliente(idCliente, pessoa)
     listaClientes.add(cliente)
+
+    println("Cliente adicionado com sucesso!")
 }
 
 fun listarClientes() {
@@ -134,7 +184,14 @@ fun removerCliente() {
     val cliente = listaClientes.find { it.idCliente == idCliente }
     if (cliente != null) {
         listaClientes.remove(cliente)
-        listaPessoas.remove(cliente.pessoa)
+
+        // Verifica se a pessoa também é um funcionário antes de removê-la
+        val pessoaEhFuncionario = listaFuncionarios.any { it.pessoa.idPessoa == cliente.pessoa.idPessoa }
+        if (!pessoaEhFuncionario) {
+            // Se a pessoa não for funcionário, remove-a da lista de pessoas
+            listaPessoas.remove(cliente.pessoa)
+        }
+
         listaCarros.removeIf { it.dono.idPessoa == cliente.pessoa.idPessoa }
         println("Cliente removido com sucesso!")
     } else {

@@ -9,6 +9,7 @@ fun menuAdmin() {
         println("3. Gerir Marcas/Modelos")
         println("4. Gerir Tipos de Peças")
         println("5. Gerir Peças")
+        println("6. Gerir Fornecedores")
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
@@ -20,6 +21,7 @@ fun menuAdmin() {
             3 -> menuMarcasModelos()
             4 -> menuTiposPecas()
             5 -> menuPecas()
+            6 -> menuFornecedores()
             0 -> {
                 println("A sair do Menu de Administração.")
                 finalizar = true
@@ -309,5 +311,144 @@ fun removerPeca() {
         println("Peça removida com sucesso!")
     } else {
         println("Peça não encontrada.")
+    }
+}
+
+fun menuFornecedores() {
+    var finalizar = false
+    while (!finalizar) {
+        println("=====================================")
+        println("Área de Fornecedores")
+        println("=====================================")
+        println("1. Adicionar Fornecedor")
+        println("2. Listar Fornecedores")
+        println("3. Editar Fornecedor")
+        println("4. Remover Fornecedor")
+        println("0. Sair")
+        println("=====================================")
+        print("Escolha uma opção: ")
+        val opcao = readLine()!!.toInt()
+        cls()
+        when (opcao) {
+            1 -> adicionarFornecedor()
+            2 -> listarFornecedores()
+            3 -> editarFornecedor()
+            4 -> removerFornecedor()
+            0 -> finalizar = true
+            else -> println("Opção inválida, tente novamente.")
+        }
+    }
+}
+
+fun adicionarFornecedor() {
+    println("Adicionar Fornecedor")
+    print("Nome do Fornecedor: ")
+    val nomeFornecedor = readLine()!!
+
+    print("País do Fornecedor: ")
+    val paisFornecedor = readLine()!!
+
+    print("Número de Telefone do Fornecedor: ")
+    val numeroTelefoneFornecedor = readLine()!!
+
+    val fornecedorExistente = listaFornecedores.find { it.nome.equals(nomeFornecedor, ignoreCase = true) }
+    if (fornecedorExistente != null) {
+        println("Já existe um fornecedor com este nome. Operação cancelada.")
+        return
+    }
+
+    val idFornecedor = if (listaFornecedores.isEmpty()) 1 else listaFornecedores.maxOf { it.id } + 1
+
+    val fornecedor = Fornecedor(idFornecedor, nomeFornecedor, paisFornecedor, numeroTelefoneFornecedor)
+    listaFornecedores.add(fornecedor)
+    println("Fornecedor adicionado com sucesso!")
+}
+
+fun listarFornecedores() {
+    println("Listar Fornecedores")
+    if (listaFornecedores.isEmpty()) {
+        println("Não existem fornecedores registados.")
+        return
+    }
+
+    for (fornecedor in listaFornecedores) {
+        println(fornecedor)
+    }
+}
+
+fun editarFornecedor() {
+    println("Editar Fornecedor")
+    listarFornecedores()
+
+    if (listaFornecedores.isEmpty()) {
+        return
+    }
+
+    print("ID do Fornecedor: ")
+    val idFornecedor = readLine()!!.toInt()
+    val fornecedor = listaFornecedores.find { it.id == idFornecedor }
+
+    if (fornecedor != null) {
+        var finalizar = false
+        while (!finalizar) {
+            println("\nInformações atuais do fornecedor:")
+            println(fornecedor)
+
+            println("\nEscolha o campo para editar:")
+            println("1. Nome")
+            println("2. País")
+            println("3. Número de Telefone")
+            println("4. Finalizar edição")
+            print("Opção: ")
+            val opcao = readLine()!!
+
+            when (opcao) {
+                "1" -> {
+                    print("Novo nome: ")
+                    fornecedor.nome = readLine()!!
+                }
+                "2" -> {
+                    print("Novo país: ")
+                    fornecedor.pais = readLine()!!
+                }
+                "3" -> {
+                    print("Novo número de telefone: ")
+                    fornecedor.numeroTelefone = readLine()!!
+                }
+                "4" -> {
+                    finalizar = true
+                    println("Fornecedor editado com sucesso!")
+                }
+                else -> println("Opção inválida, tente novamente.")
+            }
+        }
+    } else {
+        println("Fornecedor não encontrado.")
+    }
+}
+
+fun removerFornecedor() {
+    println("Remover Fornecedor")
+    listarFornecedores()
+
+    if (listaFornecedores.isEmpty()) {
+        return
+    }
+
+    print("ID do Fornecedor: ")
+    val idFornecedor = readLine()!!.toInt()
+    val fornecedor = listaFornecedores.find { it.id == idFornecedor }
+
+    if (fornecedor != null) {
+        print("Tem certeza que deseja remover o fornecedor ${fornecedor.nome}? (S/N): ")
+        val confirmacao = readLine()!!
+        if (confirmacao.equals("S", ignoreCase = true)) {
+            listaFornecedores.remove(fornecedor)
+            println("Fornecedor removido com sucesso!")
+        } else {
+            println("Operação cancelada.")
+        }
+    } else {
+        println("Fornecedor não encontrado.")
     }
 }

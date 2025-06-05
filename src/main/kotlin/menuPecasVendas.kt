@@ -15,7 +15,7 @@ fun menuPecasVendas(){
         cls()
         when (opcao) {
             1 -> pecas()
-            2 -> println("Compras")
+            2 -> menuComprasVendas()
             0 -> finalizar = true
             else -> println("Opção inválida, tente novamente.")
         }
@@ -30,7 +30,6 @@ fun pecas(){
         println("=====================================")
         println("1. Procurar Peças")
         println("2. Carrinho")
-        println("3. Finalizar compra")
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
@@ -387,6 +386,132 @@ fun removerItemCarrinho() {
 
     val itemRemovido = carrinho.removeAt(itemIndex)
     println("Item '${itemRemovido.peca.nome}' removido do carrinho com sucesso!")
+    println("\nPressione Enter para continuar...")
+    readLine()
+}
+
+fun menuComprasVendas() {
+    var finalizar = false
+    while (!finalizar) {
+        println("=====================================")
+        println("Menu de Compras e Vendas")
+        println("=====================================")
+        println("1. Ver compras associadas a um cliente")
+        println("2. Finalizar compra atual")
+        println("0. Sair")
+        println("=====================================")
+        print("Escolha uma opção: ")
+        val opcao = readLine()!!.toInt()
+        cls()
+        when (opcao) {
+            1 -> verComprasCliente()
+            2 -> finalizarCompra()
+            0 -> finalizar = true
+            else -> println("Opção inválida, tente novamente.")
+        }
+    }
+}
+
+fun finalizarCompra() {
+    if (carrinho.isEmpty()) {
+        println("O carrinho está vazio. Não há nada para finalizar.")
+        println("\nPressione Enter para continuar...")
+        readLine()
+        return
+    }
+
+    println("Finalizar compra?")
+    println("=====================================")
+    println("Itens no carrinho:")
+
+    var total = 0.0
+    for ((index, item) in carrinho.withIndex()) {
+        val subtotal = item.peca.preco * item.quantidade
+        println("${index + 1}. ${item.peca.nome} - ${item.quantidade} unidade(s) x ${item.peca.preco}€ = ${subtotal}€")
+        total += subtotal
+    }
+
+    println("=====================================")
+    println("Total: $total€")
+    println("=====================================")
+
+    print("Deseja finalizar a compra? (S/N): ")
+    val confirmacao = readLine()!!.uppercase()
+
+    if (confirmacao != "S") {
+        println("Compra cancelada.")
+        println("\nPressione Enter para continuar...")
+        readLine()
+        return
+    }
+
+    print("Digite o ID do cliente para associar a compra: ")
+    val idCliente = readLine()!!.toInt()
+
+    val cliente = listaPessoas.find { it.idPessoa == idCliente }
+    if (cliente == null) {
+        println("Cliente com ID $idCliente não encontrado. Compra cancelada.")
+        println("\nPressione Enter para continuar...")
+        readLine()
+        return
+    }
+
+    val idCompra = if (listaComprasCliente.isEmpty()) 1 else listaComprasCliente.maxOf { it.idCompra } + 1
+
+    val dataAtual = java.time.LocalDate.now()
+    val dataFormatada = "${dataAtual.dayOfMonth.toString().padStart(2, '0')}/${dataAtual.monthValue.toString().padStart(2, '0')}/${dataAtual.year}"
+
+    val itensComprados = carrinho.map { ItemCarrinho(it.peca, it.quantidade) }
+
+    val compra = ComprasCliente(idCompra, idCliente, itensComprados, total, dataFormatada)
+
+    listaComprasCliente.add(compra)
+
+    for (item in carrinho) {
+        val peca = listaPecas.find { it.id == item.peca.id }
+        if (peca != null) {
+            peca.stock -= item.quantidade
+        }
+    }
+
+    carrinho.clear()
+
+    println("Compra finalizada com sucesso!")
+    println("ID da compra: $idCompra")
+    println("\nPressione Enter para continuar...")
+    readLine()
+}
+
+fun verComprasCliente() {
+    println("Ver compras associadas a um cliente")
+    println("=====================================")
+
+    print("Digite o ID do cliente: ")
+    val idCliente = readLine()!!.toInt()
+
+    val cliente = listaPessoas.find { it.idPessoa == idCliente }
+    if (cliente == null) {
+        println("Cliente com ID $idCliente não encontrado.")
+        println("\nPressione Enter para continuar...")
+        readLine()
+        return
+    }
+
+    println("Cliente: ${cliente.nome}")
+    println("=====================================")
+
+    val comprasDoCliente = listaComprasCliente.filter { it.idCliente == idCliente }
+
+    if (comprasDoCliente.isEmpty()) {
+        println("Este cliente não tem compras registradas.")
+    } else {
+        println("Compras do cliente:")
+        for (compra in comprasDoCliente) {
+            println(compra)
+            println("=====================================")
+        }
+    }
+
     println("\nPressione Enter para continuar...")
     readLine()
 }

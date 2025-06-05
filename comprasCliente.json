@@ -1,1 +1,57 @@
-[]
+[
+    {
+        "idCompra": 1,
+        "idCliente": 1,
+        "itensComprados": [
+            {
+                "peca": {
+                    "id": 1,
+                    "nome": "Motor V8",
+                    "tipoPeca": {
+                        "id": 1,
+                        "nome": "Motor"
+                    },
+                    "preco": 5000.0,
+                    "stock": 9,
+                    "compatibilidadeModelos": [
+                        {
+                            "id": 16,
+                            "nome": "X5",
+                            "marca": {
+                                "id": 5,
+                                "nome": "BMW"
+                            }
+                        },
+                        {
+                            "id": 19,
+                            "nome": "GLC",
+                            "marca": {
+                                "id": 6,
+                                "nome": "Mercedes-Benz"
+                            }
+                        },
+                        {
+                            "id": 24,
+                            "nome": "Mustang",
+                            "marca": {
+                                "id": 8,
+                                "nome": "Ford"
+                            }
+                        },
+                        {
+                            "id": 40,
+                            "nome": "Cayenne",
+                            "marca": {
+                                "id": 16,
+                                "nome": "Porsche"
+                            }
+                        }
+                    ]
+                },
+                "quantidade": 1
+            }
+        ],
+        "precoTotal": 5000.0,
+        "dataCompra": "05/06/2025"
+    }
+]

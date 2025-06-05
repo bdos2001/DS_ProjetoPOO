@@ -4,13 +4,17 @@ Pessoa
 Carros
 Marca
 Modelo
-
-
 Pecas
 	Tipo de Peça
+
+ItemCarrinho
+ComprasCliente
+
+---
+ConfirmaPagamentoCliente
+
 Fornecedor
 EncomendasFornecedor
 ConfirmaPgaamentoFornedor
-ComprasCliente
-ConfirmaPagamentoCliente
+
 

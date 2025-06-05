@@ -11,6 +11,8 @@ var listaModelos: MutableList<Modelo> = mutableListOf()
 var listaPecas: MutableList<Peca> = mutableListOf()
 var listaTipoPecas: MutableList<TipoPeca> = mutableListOf()
 var listaComprasCliente: MutableList<ComprasCliente> = mutableListOf()
+var listaFornecedores: MutableList<Fornecedor> = mutableListOf()
+var listaEncomendasFornecedor: MutableList<EncomendaFornecedor> = mutableListOf()
 
 fun guardarFicheiros() {
     val json = Json { prettyPrint = true }
@@ -24,6 +26,8 @@ fun guardarFicheiros() {
     File("pecas.json").writeText(json.encodeToString(listaPecas))
     File("tipoPecas.json").writeText(json.encodeToString(listaTipoPecas))
     File("comprasCliente.json").writeText(json.encodeToString(listaComprasCliente))
+    File("fornecedores.json").writeText(json.encodeToString(listaFornecedores))
+    File("encomendasFornecedor.json").writeText(json.encodeToString(listaEncomendasFornecedor))
 
     println("Dados guardados com sucesso!")
 }
@@ -41,6 +45,8 @@ fun carregarFicheiros() {
         listaPecas = File("pecas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
         listaTipoPecas = File("tipoPecas.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
         listaComprasCliente = File("comprasCliente.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaFornecedores = File("fornecedores.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
+        listaEncomendasFornecedor = File("encomendasFornecedor.json").takeIf { it.exists() }?.readText()?.let { json.decodeFromString(it) } ?: mutableListOf()
 
         println("Dados carregados com sucesso!")
     } catch (e: Exception) {
@@ -78,7 +84,7 @@ fun main() {
         when (opcMenu) {
             1 -> menuCarroouCliente()
             2 -> menuPecasVendas()
-            5 -> println("Fornecedores/Encomendas")
+            3 -> menuFornecedoresEncomendas()
             9 -> menuAdmin()
             0 -> {
                 println("A encerrar o programa")

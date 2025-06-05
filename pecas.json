@@ -7,7 +7,7 @@
             "nome": "Motor"
         },
         "preco": 5000.0,
-        "stock": 10,
+        "stock": 11,
         "compatibilidadeModelos": [
             {
                 "id": 16,
@@ -1947,7 +1947,7 @@
             "nome": "Pneus"
         },
         "preco": 160.0,
-        "stock": 25,
+        "stock": 35,
         "compatibilidadeModelos": [
             {
                 "id": 8,
