@@ -475,7 +475,7 @@ fun finalizarCompra() {
     }
 
     carrinho.clear()
-
+    guardarFicheiros()
     println("Compra finalizada com sucesso!")
     println("ID da compra: $idCompra")
     println("\nPressione Enter para continuar...")

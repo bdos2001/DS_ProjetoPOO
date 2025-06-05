@@ -7,7 +7,7 @@
             "nome": "Motor"
         },
         "preco": 5000.0,
-        "stock": 11,
+        "stock": 10,
         "compatibilidadeModelos": [
             {
                 "id": 16,

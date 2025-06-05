@@ -126,7 +126,6 @@ fun adicionarItemEncomenda(carrinho: MutableList<ItemCarrinho>) {
     println("Adicionar Item à Encomenda")
     println("=====================================")
 
-    // Listar peças disponíveis
     for ((index, peca) in listaPecas.withIndex()) {
         println("${index + 1}. ${peca.nome} (${peca.tipoPeca.nome})")
     }
@@ -144,7 +143,6 @@ fun adicionarItemEncomenda(carrinho: MutableList<ItemCarrinho>) {
 
     val pecaSelecionada = listaPecas[opcPeca - 1]
 
-    // Verificar se a peça já está no carrinho
     val itemExistente = carrinho.find { it.peca.id == pecaSelecionada.id }
     if (itemExistente != null) {
         println("Esta peça já está no carrinho. Use a opção 'Editar quantidade' para alterar.")
@@ -321,7 +319,6 @@ fun finalizarEncomenda(fornecedor: Fornecedor, carrinho: MutableList<ItemCarrinh
         }
     }
 
-    // Guardar os dados
     guardarFicheiros()
 
     println("Encomenda finalizada com sucesso!")
