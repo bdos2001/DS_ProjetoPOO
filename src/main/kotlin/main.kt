@@ -79,7 +79,6 @@ fun main() {
         menu()
         try {
             opcMenu = readLine()!!.toInt()
-            cls()
             when (opcMenu) {
                 1 -> menuCarroouCliente()
                 2 -> menuPecasVendas()
