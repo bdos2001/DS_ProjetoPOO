@@ -28,24 +28,20 @@ fun menuAreaFuncionarios() {
 fun adicionarFuncionario() {
     println("Adicionar funcionário")
 
-    // Perguntar se o funcionário já é cliente
     println("O funcionário já é cliente? (S/N)")
     val resposta = readLine()!!.uppercase()
 
     val pessoa: Pessoa
 
     if (resposta == "S") {
-        // Se for cliente, pedir o ID do cliente
         print("ID do cliente: ")
         val idCliente = readLine()!!.toInt()
         val cliente = listaClientes.find { it.idCliente == idCliente }
 
         if (cliente != null) {
-            // Usar a pessoa associada ao cliente
             pessoa = cliente.pessoa
             println("Usando dados do cliente existente: ${pessoa.nome}")
 
-            // Verificar se já existe um funcionário com o ID da Pessoa desse cliente
             val funcionarioExistente = listaFuncionarios.find { it.pessoa.idPessoa == pessoa.idPessoa }
             if (funcionarioExistente != null) {
                 println("ATENÇÃO: Já existe um funcionário com o ID de Pessoa ${pessoa.idPessoa}.")
@@ -55,7 +51,6 @@ fun adicionarFuncionario() {
             }
         } else {
             println("Cliente não encontrado. Criando novo funcionário com novos dados.")
-            // Criar nova pessoa
             print("Nome: ")
             val nome = readLine()!!
             print("Morada: ")

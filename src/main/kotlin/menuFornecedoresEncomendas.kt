@@ -9,14 +9,19 @@ fun menuFornecedoresEncomendas() {
     println("0. Voltar")
     println("=====================================")
     print("Escolha uma opção: ")
-    val opc = readLine()!!.toInt()
-    cls()
-    when (opc) {
-        1 -> listarTodosFornecedores()
-        2 -> fazerEncomendaFornecedor()
-        3 -> listarEncomendas()
-        0 -> return
-        else -> println("Opção inválida, tente novamente.")
+    try {
+        val opc = readLine()!!.toInt()
+        cls()
+        when (opc) {
+            1 -> listarTodosFornecedores()
+            2 -> fazerEncomendaFornecedor()
+            3 -> listarEncomendas()
+            0 -> return
+            else -> println("Opção inválida, tente novamente.")
+        }
+    } catch (e: NumberFormatException) {
+        cls()
+        println("Erro: Por favor, insira um número válido.")
     }
 }
 
@@ -66,7 +71,6 @@ fun fazerEncomendaFornecedor() {
         return
     }
 
-    // Selecionar fornecedor
     println("=====================================")
     println("Selecione um fornecedor:")
     println("=====================================")
@@ -74,49 +78,61 @@ fun fazerEncomendaFornecedor() {
         println("${index + 1}. ${fornecedor.nome} (${fornecedor.pais})")
     }
     print("Escolha uma opção (0 para cancelar): ")
-    val opcFornecedor = readLine()!!.toInt()
 
-    if (opcFornecedor == 0) return
-    if (opcFornecedor < 1 || opcFornecedor > listaFornecedores.size) {
-        println("Opção inválida.")
-        return
-    }
+    try {
+        val opcFornecedor = readLine()!!.toInt()
 
-    val fornecedorSelecionado = listaFornecedores[opcFornecedor - 1]
-    val carrinhoEncomenda = mutableListOf<ItemCarrinho>()
-    var continuarEncomenda = true
-
-    while (continuarEncomenda) {
-        cls()
-        println("=====================================")
-        println("Encomenda para: ${fornecedorSelecionado.nome}")
-        println("=====================================")
-        println("Itens no carrinho: ${carrinhoEncomenda.size}")
-        println("1. Adicionar item")
-        println("2. Editar quantidade de item")
-        println("3. Remover item")
-        println("4. Ver carrinho")
-        println("5. Finalizar encomenda")
-        println("0. Cancelar encomenda")
-        println("=====================================")
-        print("Escolha uma opção: ")
-
-        when (readLine()!!.toInt()) {
-            1 -> adicionarItemEncomenda(carrinhoEncomenda)
-            2 -> editarItemEncomenda(carrinhoEncomenda)
-            3 -> removerItemEncomenda(carrinhoEncomenda)
-            4 -> verCarrinhoEncomenda(carrinhoEncomenda)
-            5 -> {
-                if (finalizarEncomenda(fornecedorSelecionado, carrinhoEncomenda)) {
-                    continuarEncomenda = false
-                }
-            }
-            0 -> {
-                println("Encomenda cancelada.")
-                continuarEncomenda = false
-            }
-            else -> println("Opção inválida.")
+        if (opcFornecedor == 0) return
+        if (opcFornecedor < 1 || opcFornecedor > listaFornecedores.size) {
+            println("Opção inválida.")
+            return
         }
+
+        val fornecedorSelecionado = listaFornecedores[opcFornecedor - 1]
+        val carrinhoEncomenda = mutableListOf<ItemCarrinho>()
+        var continuarEncomenda = true
+
+        while (continuarEncomenda) {
+            cls()
+            println("=====================================")
+            println("Encomenda para: ${fornecedorSelecionado.nome}")
+            println("=====================================")
+            println("Itens no carrinho: ${carrinhoEncomenda.size}")
+            println("1. Adicionar item")
+            println("2. Editar quantidade de item")
+            println("3. Remover item")
+            println("4. Ver carrinho")
+            println("5. Finalizar encomenda")
+            println("0. Cancelar encomenda")
+            println("=====================================")
+            print("Escolha uma opção: ")
+
+            try {
+                when (readLine()!!.toInt()) {
+                    1 -> adicionarItemEncomenda(carrinhoEncomenda)
+                    2 -> editarItemEncomenda(carrinhoEncomenda)
+                    3 -> removerItemEncomenda(carrinhoEncomenda)
+                    4 -> verCarrinhoEncomenda(carrinhoEncomenda)
+                    5 -> {
+                        if (finalizarEncomenda(fornecedorSelecionado, carrinhoEncomenda)) {
+                            continuarEncomenda = false
+                        }
+                    }
+                    0 -> {
+                        println("Encomenda cancelada.")
+                        continuarEncomenda = false
+                    }
+                    else -> println("Opção inválida.")
+                }
+            } catch (e: NumberFormatException) {
+                cls()
+                println("Erro: Por favor, insira um número válido.")
+            }
+        }
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido.")
+        println("\nPressione ENTER para continuar...")
+        readLine()
     }
 }
 
@@ -131,40 +147,52 @@ fun adicionarItemEncomenda(carrinho: MutableList<ItemCarrinho>) {
     }
 
     print("Selecione uma peça (0 para cancelar): ")
-    val opcPeca = readLine()!!.toInt()
+    try {
+        val opcPeca = readLine()!!.toInt()
 
-    if (opcPeca == 0) return
-    if (opcPeca < 1 || opcPeca > listaPecas.size) {
-        println("Opção inválida.")
+        if (opcPeca == 0) return
+        if (opcPeca < 1 || opcPeca > listaPecas.size) {
+            println("Opção inválida.")
+            println("\nPressione ENTER para continuar...")
+            readLine()
+            return
+        }
+
+        val pecaSelecionada = listaPecas[opcPeca - 1]
+
+        val itemExistente = carrinho.find { it.peca.id == pecaSelecionada.id }
+        if (itemExistente != null) {
+            println("Esta peça já está no carrinho. Use a opção 'Editar quantidade' para alterar.")
+            println("\nPressione ENTER para continuar...")
+            readLine()
+            return
+        }
+
+        print("Quantidade: ")
+        try {
+            val quantidade = readLine()!!.toInt()
+
+            if (quantidade <= 0) {
+                println("A quantidade deve ser maior que zero.")
+                println("\nPressione ENTER para continuar...")
+                readLine()
+                return
+            }
+
+            carrinho.add(ItemCarrinho(pecaSelecionada, quantidade))
+            println("Item adicionado ao carrinho.")
+            println("\nPressione ENTER para continuar...")
+            readLine()
+        } catch (e: NumberFormatException) {
+            println("Erro: Por favor, insira um número válido para a quantidade.")
+            println("\nPressione ENTER para continuar...")
+            readLine()
+        }
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para a opção.")
         println("\nPressione ENTER para continuar...")
         readLine()
-        return
     }
-
-    val pecaSelecionada = listaPecas[opcPeca - 1]
-
-    val itemExistente = carrinho.find { it.peca.id == pecaSelecionada.id }
-    if (itemExistente != null) {
-        println("Esta peça já está no carrinho. Use a opção 'Editar quantidade' para alterar.")
-        println("\nPressione ENTER para continuar...")
-        readLine()
-        return
-    }
-
-    print("Quantidade: ")
-    val quantidade = readLine()!!.toInt()
-
-    if (quantidade <= 0) {
-        println("A quantidade deve ser maior que zero.")
-        println("\nPressione ENTER para continuar...")
-        readLine()
-        return
-    }
-
-    carrinho.add(ItemCarrinho(pecaSelecionada, quantidade))
-    println("Item adicionado ao carrinho.")
-    println("\nPressione ENTER para continuar...")
-    readLine()
 }
 
 fun editarItemEncomenda(carrinho: MutableList<ItemCarrinho>) {
@@ -185,32 +213,44 @@ fun editarItemEncomenda(carrinho: MutableList<ItemCarrinho>) {
     }
 
     print("Selecione um item para editar (0 para cancelar): ")
-    val opcItem = readLine()!!.toInt()
+    try {
+        val opcItem = readLine()!!.toInt()
 
-    if (opcItem == 0) return
-    if (opcItem < 1 || opcItem > carrinho.size) {
-        println("Opção inválida.")
+        if (opcItem == 0) return
+        if (opcItem < 1 || opcItem > carrinho.size) {
+            println("Opção inválida.")
+            println("\nPressione ENTER para continuar...")
+            readLine()
+            return
+        }
+
+        val itemSelecionado = carrinho[opcItem - 1]
+
+        print("Nova quantidade (atual: ${itemSelecionado.quantidade}): ")
+        try {
+            val novaQuantidade = readLine()!!.toInt()
+
+            if (novaQuantidade <= 0) {
+                println("A quantidade deve ser maior que zero. Use a opção 'Remover item' para remover.")
+                println("\nPressione ENTER para continuar...")
+                readLine()
+                return
+            }
+
+            itemSelecionado.quantidade = novaQuantidade
+            println("Quantidade atualizada.")
+            println("\nPressione ENTER para continuar...")
+            readLine()
+        } catch (e: NumberFormatException) {
+            println("Erro: Por favor, insira um número válido para a quantidade.")
+            println("\nPressione ENTER para continuar...")
+            readLine()
+        }
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para a opção.")
         println("\nPressione ENTER para continuar...")
         readLine()
-        return
     }
-
-    val itemSelecionado = carrinho[opcItem - 1]
-
-    print("Nova quantidade (atual: ${itemSelecionado.quantidade}): ")
-    val novaQuantidade = readLine()!!.toInt()
-
-    if (novaQuantidade <= 0) {
-        println("A quantidade deve ser maior que zero. Use a opção 'Remover item' para remover.")
-        println("\nPressione ENTER para continuar...")
-        readLine()
-        return
-    }
-
-    itemSelecionado.quantidade = novaQuantidade
-    println("Quantidade atualizada.")
-    println("\nPressione ENTER para continuar...")
-    readLine()
 }
 
 fun removerItemEncomenda(carrinho: MutableList<ItemCarrinho>) {
@@ -231,20 +271,26 @@ fun removerItemEncomenda(carrinho: MutableList<ItemCarrinho>) {
     }
 
     print("Selecione um item para remover (0 para cancelar): ")
-    val opcItem = readLine()!!.toInt()
+    try {
+        val opcItem = readLine()!!.toInt()
 
-    if (opcItem == 0) return
-    if (opcItem < 1 || opcItem > carrinho.size) {
-        println("Opção inválida.")
+        if (opcItem == 0) return
+        if (opcItem < 1 || opcItem > carrinho.size) {
+            println("Opção inválida.")
+            println("\nPressione ENTER para continuar...")
+            readLine()
+            return
+        }
+
+        carrinho.removeAt(opcItem - 1)
+        println("Item removido do carrinho.")
         println("\nPressione ENTER para continuar...")
         readLine()
-        return
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para a opção.")
+        println("\nPressione ENTER para continuar...")
+        readLine()
     }
-
-    carrinho.removeAt(opcItem - 1)
-    println("Item removido do carrinho.")
-    println("\nPressione ENTER para continuar...")
-    readLine()
 }
 
 fun verCarrinhoEncomenda(carrinho: MutableList<ItemCarrinho>) {
@@ -294,13 +340,10 @@ fun finalizarEncomenda(fornecedor: Fornecedor, carrinho: MutableList<ItemCarrinh
         return false
     }
 
-    // Gerar ID para a encomenda
     val idEncomenda = if (listaEncomendasFornecedor.isEmpty()) 1 else listaEncomendasFornecedor.maxOf { it.idEncomenda } + 1
 
-    // Obter data atual (formato dd/mm/aaaa)
     val dataAtual = java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"))
 
-    // Criar a encomenda
     val encomenda = EncomendaFornecedor(
         idEncomenda = idEncomenda,
         fornecedor = fornecedor,
@@ -308,10 +351,8 @@ fun finalizarEncomenda(fornecedor: Fornecedor, carrinho: MutableList<ItemCarrinh
         dataEncomenda = dataAtual
     )
 
-    // Adicionar à lista de encomendas
     listaEncomendasFornecedor.add(encomenda)
 
-    // Atualizar o stock das peças
     for (item in carrinho) {
         val peca = listaPecas.find { it.id == item.peca.id }
         if (peca != null) {

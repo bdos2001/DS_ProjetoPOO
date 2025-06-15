@@ -9,12 +9,7 @@ Pecas
 
 ItemCarrinho
 ComprasCliente
-
----
-ConfirmaPagamentoCliente
-
 Fornecedor
 EncomendasFornecedor
-ConfirmaPgaamentoFornedor
 
 

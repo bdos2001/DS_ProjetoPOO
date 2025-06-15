@@ -11,13 +11,18 @@ fun menuPecasVendas(){
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> pecas()
-            2 -> menuComprasVendas()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> pecas()
+                2 -> menuComprasVendas()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -33,13 +38,18 @@ fun pecas(){
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> procurarPecas()
-            2 -> menuCarrinho()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> procurarPecas()
+                2 -> menuCarrinho()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -57,15 +67,20 @@ fun menuCarrinho() {
         println("0. Voltar")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> adicionarAoCarrinho()
-            2 -> visualizarCarrinho()
-            3 -> editarItemCarrinho()
-            4 -> removerItemCarrinho()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> adicionarAoCarrinho()
+                2 -> visualizarCarrinho()
+                3 -> editarItemCarrinho()
+                4 -> removerItemCarrinho()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -83,15 +98,20 @@ fun procurarPecas(){
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> procurarPecaPorId()
-            2 -> procurarPecaPorTipo()
-            3 -> procurarPecaPorCarro()
-            4 -> procurarPecaPorCliente()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> procurarPecaPorId()
+                2 -> procurarPecaPorTipo()
+                3 -> procurarPecaPorCarro()
+                4 -> procurarPecaPorCliente()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -100,14 +120,19 @@ fun procurarPecaPorId() {
     cls()
     println("Procurar peça por ID")
     print("Digite o ID da peça: ")
-    val idPeca = readLine()!!.toInt()
-    val peca = listaPecas.find { it.id == idPeca }
-    cls()
-    if (peca != null) {
-        println("Peça encontrada:")
-        println(peca)
-    } else {
-        println("Peça com ID $idPeca não encontrada.")
+    try {
+        val idPeca = readLine()!!.toInt()
+        val peca = listaPecas.find { it.id == idPeca }
+        cls()
+        if (peca != null) {
+            println("Peça encontrada:")
+            println(peca)
+        } else {
+            println("Peça com ID $idPeca não encontrada.")
+        }
+    } catch (e: NumberFormatException) {
+        cls()
+        println("Erro: Por favor, insira um número válido para o ID.")
     }
 }
 
@@ -260,15 +285,12 @@ fun adicionarAoCarrinho(){
         }
 
         if (peca.stock >= quantidade) {
-            // Verifica se a peça já está no carrinho
             val itemExistente = carrinho.find { it.peca.id == peca.id }
 
             if (itemExistente != null) {
-                // Se a peça já está no carrinho, atualiza a quantidade
                 itemExistente.quantidade += quantidade
                 println("Quantidade da peça '${peca.nome}' atualizada no carrinho para ${itemExistente.quantidade}!")
             } else {
-                // Se a peça não está no carrinho, adiciona como novo item
                 carrinho.add(ItemCarrinho(peca, quantidade))
                 println("${quantidade} unidade(s) da peça '${peca.nome}' adicionada(s) ao carrinho com sucesso!")
             }

@@ -13,20 +13,25 @@ fun menuAdmin() {
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> menuAreaFuncionarios()
-            2 -> menuClientes()
-            3 -> menuMarcasModelos()
-            4 -> menuTiposPecas()
-            5 -> menuPecas()
-            6 -> menuFornecedores()
-            0 -> {
-                println("A sair do Menu de Administração.")
-                finalizar = true
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> menuAreaFuncionarios()
+                2 -> menuClientes()
+                3 -> menuMarcasModelos()
+                4 -> menuTiposPecas()
+                5 -> menuPecas()
+                6 -> menuFornecedores()
+                0 -> {
+                    println("A sair do Menu de Administração.")
+                    finalizar = true
+                }
+                else -> println("Opção inválida, tente novamente.")
             }
-            else -> println("Opção inválida, tente novamente.")
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -44,15 +49,20 @@ fun menuTiposPecas() {
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> adicionarTipoPeca()
-            2 -> listarTiposPecas()
-            3 -> editarTipoPeca()
-            4 -> removerTipoPeca()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> adicionarTipoPeca()
+                2 -> listarTiposPecas()
+                3 -> editarTipoPeca()
+                4 -> removerTipoPeca()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -86,16 +96,20 @@ fun editarTipoPeca() {
     println("Editar Tipo de Peça")
     listarTiposPecas()
     print("ID do Tipo de Peça: ")
-    val idTipoPeca = readLine()!!.toInt()
-    val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
-    if (tipoPeca != null) {
-        println("Nome atual do Tipo de Peça: ${tipoPeca.nome}")
-        print("Novo Nome do Tipo de Peça: ")
-        val novoNome = readLine()!!
-        tipoPeca.nome = novoNome
-        println("Tipo de Peça editado com sucesso!")
-    } else {
-        println("Tipo de Peça não encontrado.")
+    try {
+        val idTipoPeca = readLine()!!.toInt()
+        val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
+        if (tipoPeca != null) {
+            println("Nome atual do Tipo de Peça: ${tipoPeca.nome}")
+            print("Novo Nome do Tipo de Peça: ")
+            val novoNome = readLine()!!
+            tipoPeca.nome = novoNome
+            println("Tipo de Peça editado com sucesso!")
+        } else {
+            println("Tipo de Peça não encontrado.")
+        }
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para o ID.")
     }
 }
 
@@ -103,20 +117,23 @@ fun removerTipoPeca() {
     println("Remover Tipo de Peça")
     listarTiposPecas()
     print("ID do Tipo de Peça: ")
-    val idTipoPeca = readLine()!!.toInt()
-    val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
-    if (tipoPeca != null) {
-        // Verificar se existem peças que usam este tipo
-        val pecasComEsteTipo = listaPecas.filter { it.tipoPeca.id == idTipoPeca }
-        if (pecasComEsteTipo.isNotEmpty()) {
-            println("Não é possível remover este tipo de peça pois existem peças associadas a ele.")
-            return
-        }
+    try {
+        val idTipoPeca = readLine()!!.toInt()
+        val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
+        if (tipoPeca != null) {
+            val pecasComEsteTipo = listaPecas.filter { it.tipoPeca.id == idTipoPeca }
+            if (pecasComEsteTipo.isNotEmpty()) {
+                println("Não é possível remover este tipo de peça pois existem peças associadas a ele.")
+                return
+            }
 
-        listaTipoPecas.remove(tipoPeca)
-        println("Tipo de Peça removido com sucesso!")
-    } else {
-        println("Tipo de Peça não encontrado.")
+            listaTipoPecas.remove(tipoPeca)
+            println("Tipo de Peça removido com sucesso!")
+        } else {
+            println("Tipo de Peça não encontrado.")
+        }
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para o ID.")
     }
 }
 
@@ -133,15 +150,20 @@ fun menuPecas() {
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> adicionarPeca()
-            2 -> listarPecas()
-            3 -> editarPeca()
-            4 -> removerPeca()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> adicionarPeca()
+                2 -> listarPecas()
+                3 -> editarPeca()
+                4 -> removerPeca()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -157,54 +179,66 @@ fun adicionarPeca() {
         return
     }
 
-    // Selecionar tipo de peça
     println("Escolha o Tipo de Peça pelo ID:")
     listarTiposPecas()
     print("ID do Tipo de Peça: ")
-    val idTipoPeca = readLine()!!.toInt()
+    try {
+        val idTipoPeca = readLine()!!.toInt()
 
-    val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
-    if (tipoPeca == null) {
-        println("Tipo de Peça não encontrado. Peça não adicionada.")
-        return
-    }
-
-    // Inserir preço
-    print("Preço da Peça: ")
-    val precoPeca = readLine()!!.toDouble()
-
-    // Inserir stock
-    print("Stock inicial da Peça: ")
-    val stockPeca = readLine()!!.toInt()
-
-    // Selecionar modelos compatíveis
-    val modelosCompativeis = mutableListOf<Modelo>()
-    var adicionarMaisModelos = true
-
-    while (adicionarMaisModelos) {
-        println("Escolha um Modelo compatível pelo ID (ou 0 para terminar):")
-        listarModelos()
-        print("ID do Modelo (0 para terminar): ")
-        val idModelo = readLine()!!.toInt()
-
-        if (idModelo == 0) {
-            adicionarMaisModelos = false
-        } else {
-            val modelo = listaModelos.find { it.id == idModelo }
-            if (modelo != null) {
-                modelosCompativeis.add(modelo)
-                println("Modelo adicionado à lista de compatibilidade.")
-            } else {
-                println("Modelo não encontrado.")
-            }
+        val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
+        if (tipoPeca == null) {
+            println("Tipo de Peça não encontrado. Peça não adicionada.")
+            return
         }
+
+        print("Preço da Peça: ")
+        try {
+            val precoPeca = readLine()!!.toDouble()
+
+            print("Stock inicial da Peça: ")
+            try {
+                val stockPeca = readLine()!!.toInt()
+
+                val modelosCompativeis = mutableListOf<Modelo>()
+                var adicionarMaisModelos = true
+
+                while (adicionarMaisModelos) {
+                    println("Escolha um Modelo compatível pelo ID (ou 0 para terminar):")
+                    listarModelos()
+                    print("ID do Modelo (0 para terminar): ")
+                    try {
+                        val idModelo = readLine()!!.toInt()
+
+                        if (idModelo == 0) {
+                            adicionarMaisModelos = false
+                        } else {
+                            val modelo = listaModelos.find { it.id == idModelo }
+                            if (modelo != null) {
+                                modelosCompativeis.add(modelo)
+                                println("Modelo adicionado à lista de compatibilidade.")
+                            } else {
+                                println("Modelo não encontrado.")
+                            }
+                        }
+                    } catch (e: NumberFormatException) {
+                        println("Erro: Por favor, insira um número válido para o ID do modelo.")
+                    }
+                }
+
+                val idPeca = if (listaPecas.isEmpty()) 1 else listaPecas.maxOf { it.id } + 1
+
+                val peca = Peca(idPeca, nomePeca, tipoPeca, precoPeca, stockPeca, modelosCompativeis)
+                listaPecas.add(peca)
+                println("Peça adicionada com sucesso!")
+            } catch (e: NumberFormatException) {
+                println("Erro: Por favor, insira um número válido para o stock.")
+            }
+        } catch (e: NumberFormatException) {
+            println("Erro: Por favor, insira um número válido para o preço.")
+        }
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para o ID do tipo de peça.")
     }
-
-    val idPeca = if (listaPecas.isEmpty()) 1 else listaPecas.maxOf { it.id } + 1
-
-    val peca = Peca(idPeca, nomePeca, tipoPeca, precoPeca, stockPeca, modelosCompativeis)
-    listaPecas.add(peca)
-    println("Peça adicionada com sucesso!")
 }
 
 fun listarPecas() {
@@ -217,86 +251,109 @@ fun listarPecas() {
 fun editarPeca() {
     println("Editar Peça")
     print("ID da Peça: ")
-    val idPeca = readLine()!!.toInt()
-    val peca = listaPecas.find { it.id == idPeca }
-    if (peca != null) {
-        println("Peça encontrada:")
-        println(peca)
+    try {
+        val idPeca = readLine()!!.toInt()
+        val peca = listaPecas.find { it.id == idPeca }
+        if (peca != null) {
+            println("Peça encontrada:")
+            println(peca)
 
-        println("O que deseja editar?")
-        println("1. Nome")
-        println("2. Tipo de Peça")
-        println("3. Preço")
-        println("4. Stock")
-        println("5. Modelos Compatíveis")
-        println("0. Cancelar")
-        print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
+            println("O que deseja editar?")
+            println("1. Nome")
+            println("2. Tipo de Peça")
+            println("3. Preço")
+            println("4. Stock")
+            println("5. Modelos Compatíveis")
+            println("0. Cancelar")
+            print("Escolha uma opção: ")
+            try {
+                val opcao = readLine()!!.toInt()
 
-        when (opcao) {
-            1 -> {
-                print("Novo Nome da Peça: ")
-                val novoNome = readLine()!!
-                peca.nome = novoNome
-                println("Nome da peça atualizado com sucesso!")
-            }
-            2 -> {
-                println("Escolha o novo Tipo de Peça pelo ID:")
-                listarTiposPecas()
-                print("ID do Tipo de Peça: ")
-                val idTipoPeca = readLine()!!.toInt()
-                val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
-                if (tipoPeca != null) {
-                    peca.tipoPeca = tipoPeca
-                    println("Tipo de peça atualizado com sucesso!")
-                } else {
-                    println("Tipo de Peça não encontrado.")
-                }
-            }
-            3 -> {
-                print("Novo Preço da Peça: ")
-                val novoPreco = readLine()!!.toDouble()
-                peca.preco = novoPreco
-                println("Preço da peça atualizado com sucesso!")
-            }
-            4 -> {
-                print("Novo Stock da Peça: ")
-                val novoStock = readLine()!!.toInt()
-                peca.stock = novoStock
-                println("Stock da peça atualizado com sucesso!")
-            }
-            5 -> {
-                // Atualizar modelos compatíveis
-                val modelosCompativeis = mutableListOf<Modelo>()
-                var adicionarMaisModelos = true
-
-                while (adicionarMaisModelos) {
-                    println("Escolha um Modelo compatível pelo ID (ou 0 para terminar):")
-                    listarModelos()
-                    print("ID do Modelo (0 para terminar): ")
-                    val idModelo = readLine()!!.toInt()
-
-                    if (idModelo == 0) {
-                        adicionarMaisModelos = false
-                    } else {
-                        val modelo = listaModelos.find { it.id == idModelo }
-                        if (modelo != null) {
-                            modelosCompativeis.add(modelo)
-                            println("Modelo adicionado à lista de compatibilidade.")
-                        } else {
-                            println("Modelo não encontrado.")
+                when (opcao) {
+                    1 -> {
+                        print("Novo Nome da Peça: ")
+                        val novoNome = readLine()!!
+                        peca.nome = novoNome
+                        println("Nome da peça atualizado com sucesso!")
+                    }
+                    2 -> {
+                        println("Escolha o novo Tipo de Peça pelo ID:")
+                        listarTiposPecas()
+                        print("ID do Tipo de Peça: ")
+                        try {
+                            val idTipoPeca = readLine()!!.toInt()
+                            val tipoPeca = listaTipoPecas.find { it.id == idTipoPeca }
+                            if (tipoPeca != null) {
+                                peca.tipoPeca = tipoPeca
+                                println("Tipo de peça atualizado com sucesso!")
+                            } else {
+                                println("Tipo de Peça não encontrado.")
+                            }
+                        } catch (e: NumberFormatException) {
+                            println("Erro: Por favor, insira um número válido para o ID do tipo de peça.")
                         }
                     }
-                }
+                    3 -> {
+                        print("Novo Preço da Peça: ")
+                        try {
+                            val novoPreco = readLine()!!.toDouble()
+                            peca.preco = novoPreco
+                            println("Preço da peça atualizado com sucesso!")
+                        } catch (e: NumberFormatException) {
+                            println("Erro: Por favor, insira um número válido para o preço.")
+                        }
+                    }
+                    4 -> {
+                        print("Novo Stock da Peça: ")
+                        try {
+                            val novoStock = readLine()!!.toInt()
+                            peca.stock = novoStock
+                            println("Stock da peça atualizado com sucesso!")
+                        } catch (e: NumberFormatException) {
+                            println("Erro: Por favor, insira um número válido para o stock.")
+                        }
+                    }
+                    5 -> {
+                        val modelosCompativeis = mutableListOf<Modelo>()
+                        var adicionarMaisModelos = true
 
-                peca.compatibilidadeModelos = modelosCompativeis
-                println("Modelos compatíveis atualizados com sucesso!")
+                        while (adicionarMaisModelos) {
+                            println("Escolha um Modelo compatível pelo ID (ou 0 para terminar):")
+                            listarModelos()
+                            print("ID do Modelo (0 para terminar): ")
+                            try {
+                                val idModelo = readLine()!!.toInt()
+
+                                if (idModelo == 0) {
+                                    adicionarMaisModelos = false
+                                } else {
+                                    val modelo = listaModelos.find { it.id == idModelo }
+                                    if (modelo != null) {
+                                        modelosCompativeis.add(modelo)
+                                        println("Modelo adicionado à lista de compatibilidade.")
+                                    } else {
+                                        println("Modelo não encontrado.")
+                                    }
+                                }
+                            } catch (e: NumberFormatException) {
+                                println("Erro: Por favor, insira um número válido para o ID do modelo.")
+                            }
+                        }
+
+                        peca.compatibilidadeModelos = modelosCompativeis
+                        println("Modelos compatíveis atualizados com sucesso!")
+                    }
+                    0 -> println("Operação cancelada.")
+                    else -> println("Opção inválida.")
+                }
+            } catch (e: NumberFormatException) {
+                println("Erro: Por favor, insira um número válido para a opção.")
             }
-            0 -> println("Operação cancelada.")
-            else -> println("Opção inválida.")
+        } else {
+            println("Peça não encontrada.")
         }
-    } else {
-        println("Peça não encontrada.")
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para o ID da peça.")
     }
 }
 
@@ -304,13 +361,17 @@ fun removerPeca() {
     println("Remover Peça")
     listarPecas()
     print("ID da Peça: ")
-    val idPeca = readLine()!!.toInt()
-    val peca = listaPecas.find { it.id == idPeca }
-    if (peca != null) {
-        listaPecas.remove(peca)
-        println("Peça removida com sucesso!")
-    } else {
-        println("Peça não encontrada.")
+    try {
+        val idPeca = readLine()!!.toInt()
+        val peca = listaPecas.find { it.id == idPeca }
+        if (peca != null) {
+            listaPecas.remove(peca)
+            println("Peça removida com sucesso!")
+        } else {
+            println("Peça não encontrada.")
+        }
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para o ID da peça.")
     }
 }
 
@@ -327,15 +388,20 @@ fun menuFornecedores() {
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> adicionarFornecedor()
-            2 -> listarFornecedores()
-            3 -> editarFornecedor()
-            4 -> removerFornecedor()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> adicionarFornecedor()
+                2 -> listarFornecedores()
+                3 -> editarFornecedor()
+                4 -> removerFornecedor()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -385,45 +451,49 @@ fun editarFornecedor() {
     }
 
     print("ID do Fornecedor: ")
-    val idFornecedor = readLine()!!.toInt()
-    val fornecedor = listaFornecedores.find { it.id == idFornecedor }
+    try {
+        val idFornecedor = readLine()!!.toInt()
+        val fornecedor = listaFornecedores.find { it.id == idFornecedor }
 
-    if (fornecedor != null) {
-        var finalizar = false
-        while (!finalizar) {
-            println("\nInformações atuais do fornecedor:")
-            println(fornecedor)
+        if (fornecedor != null) {
+            var finalizar = false
+            while (!finalizar) {
+                println("\nInformações atuais do fornecedor:")
+                println(fornecedor)
 
-            println("\nEscolha o campo para editar:")
-            println("1. Nome")
-            println("2. País")
-            println("3. Número de Telefone")
-            println("4. Finalizar edição")
-            print("Opção: ")
-            val opcao = readLine()!!
+                println("\nEscolha o campo para editar:")
+                println("1. Nome")
+                println("2. País")
+                println("3. Número de Telefone")
+                println("4. Finalizar edição")
+                print("Opção: ")
+                val opcao = readLine()!!
 
-            when (opcao) {
-                "1" -> {
-                    print("Novo nome: ")
-                    fornecedor.nome = readLine()!!
+                when (opcao) {
+                    "1" -> {
+                        print("Novo nome: ")
+                        fornecedor.nome = readLine()!!
+                    }
+                    "2" -> {
+                        print("Novo país: ")
+                        fornecedor.pais = readLine()!!
+                    }
+                    "3" -> {
+                        print("Novo número de telefone: ")
+                        fornecedor.numeroTelefone = readLine()!!
+                    }
+                    "4" -> {
+                        finalizar = true
+                        println("Fornecedor editado com sucesso!")
+                    }
+                    else -> println("Opção inválida, tente novamente.")
                 }
-                "2" -> {
-                    print("Novo país: ")
-                    fornecedor.pais = readLine()!!
-                }
-                "3" -> {
-                    print("Novo número de telefone: ")
-                    fornecedor.numeroTelefone = readLine()!!
-                }
-                "4" -> {
-                    finalizar = true
-                    println("Fornecedor editado com sucesso!")
-                }
-                else -> println("Opção inválida, tente novamente.")
             }
+        } else {
+            println("Fornecedor não encontrado.")
         }
-    } else {
-        println("Fornecedor não encontrado.")
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para o ID do fornecedor.")
     }
 }
 
@@ -436,19 +506,23 @@ fun removerFornecedor() {
     }
 
     print("ID do Fornecedor: ")
-    val idFornecedor = readLine()!!.toInt()
-    val fornecedor = listaFornecedores.find { it.id == idFornecedor }
+    try {
+        val idFornecedor = readLine()!!.toInt()
+        val fornecedor = listaFornecedores.find { it.id == idFornecedor }
 
-    if (fornecedor != null) {
-        print("Tem certeza que deseja remover o fornecedor ${fornecedor.nome}? (S/N): ")
-        val confirmacao = readLine()!!
-        if (confirmacao.equals("S", ignoreCase = true)) {
-            listaFornecedores.remove(fornecedor)
-            println("Fornecedor removido com sucesso!")
+        if (fornecedor != null) {
+            print("Tem certeza que deseja remover o fornecedor ${fornecedor.nome}? (S/N): ")
+            val confirmacao = readLine()!!
+            if (confirmacao.equals("S", ignoreCase = true)) {
+                listaFornecedores.remove(fornecedor)
+                println("Fornecedor removido com sucesso!")
+            } else {
+                println("Operação cancelada.")
+            }
         } else {
-            println("Operação cancelada.")
+            println("Fornecedor não encontrado.")
         }
-    } else {
-        println("Fornecedor não encontrado.")
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para o ID do fornecedor.")
     }
 }

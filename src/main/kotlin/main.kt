@@ -1,7 +1,6 @@
 import java.io.File
 import kotlinx.serialization.json.Json
 
-//Listas a ser inicializadas no inicio do programa
 var listaClientes: MutableList<Cliente> = mutableListOf()
 var listaFuncionarios: MutableList<Funcionario> = mutableListOf()
 var listaPessoas: MutableList<Pessoa> = mutableListOf()
@@ -67,7 +66,6 @@ fun menu() {
     print("Escolha uma opção: ")
 }
 
-//Limpa o ecrã só
 fun cls() {
     repeat(50) { println() }
 }
@@ -79,20 +77,24 @@ fun main() {
     while(opcMenu != 0) {
         cls()
         menu()
-        opcMenu = readLine()!!.toInt()
-        cls()
-        when (opcMenu) {
-            1 -> menuCarroouCliente()
-            2 -> menuPecasVendas()
-            3 -> menuFornecedoresEncomendas()
-            9 -> menuAdmin()
-            0 -> {
-                println("A encerrar o programa")
-                guardarFicheiros()
+        try {
+            opcMenu = readLine()!!.toInt()
+            cls()
+            when (opcMenu) {
+                1 -> menuCarroouCliente()
+                2 -> menuPecasVendas()
+                3 -> menuFornecedoresEncomendas()
+                9 -> menuAdmin()
+                0 -> {
+                    println("A encerrar o programa")
+                    guardarFicheiros()
+                }
+                else -> println("Opção inválida, tente novamente.")
             }
-            else -> println("Opção inválida, tente novamente.")
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
-
     }
 }
 
@@ -116,12 +118,18 @@ fun menuCarroouCliente() {
     println("0. Voltar")
     println("=====================================")
     print("Escolha uma opção: ")
-    val opc = readLine()!!.toInt()
-    cls()
-    when (opc) {
-        1 -> menuAreaCarros()
-        2 -> menuClientes()
-        0 -> return
-        else -> println("Opção inválida, tente novamente.")
+    try {
+        val opc = readLine()!!.toInt()
+        cls()
+        when (opc) {
+            1 -> menuAreaCarros()
+            2 -> menuClientes()
+            0 -> return
+            else -> println("Opção inválida, tente novamente.")
+        }
+    } catch (e: NumberFormatException) {
+        cls()
+        println("Erro: Por favor, insira um número válido.")
+        menuCarroouCliente()
     }
 }

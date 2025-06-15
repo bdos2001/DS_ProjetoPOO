@@ -9,13 +9,18 @@ fun menuMarcasModelos() {
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
-        cls()
-        when (opcao) {
-            1 -> menuMarcas()
-            2 -> menuModelos()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+        try {
+            val opcao = readLine()!!.toInt()
+            cls()
+            when (opcao) {
+                1 -> menuMarcas()
+                2 -> menuModelos()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -33,15 +38,20 @@ fun menuMarcas() {
         println("0. Sair")
         println("=====================================")
         print("Escolha uma opção: ")
-        val opcao = readLine()!!.toInt()
+        try {
+            val opcao = readLine()!!.toInt()
 
-        when (opcao) {
-            1 -> adicionarMarca()
-            2 -> listarMarcas()
-            3 -> editarMarca()
-            4 -> removerMarca()
-            0 -> finalizar = true
-            else -> println("Opção inválida, tente novamente.")
+            when (opcao) {
+                1 -> adicionarMarca()
+                2 -> listarMarcas()
+                3 -> editarMarca()
+                4 -> removerMarca()
+                0 -> finalizar = true
+                else -> println("Opção inválida, tente novamente.")
+            }
+        } catch (e: NumberFormatException) {
+            cls()
+            println("Erro: Por favor, insira um número válido.")
         }
     }
 }
@@ -73,16 +83,20 @@ fun listarMarcas() {
 fun editarMarca() {
     println("Editar Marca")
     print("ID da Marca: ")
-    val idMarca = readLine()!!.toInt()
-    val marca = listaMarcas.find { it.id == idMarca }
-    if (marca != null) {
-        println("Nome atual da Marca: ${marca.nome}")
-        print("Novo Nome da Marca: ")
-        val novoNome = readLine()!!
-        marca.nome = novoNome
-        println("Marca editada com sucesso!")
-    } else {
-        println("Marca não encontrada.")
+    try {
+        val idMarca = readLine()!!.toInt()
+        val marca = listaMarcas.find { it.id == idMarca }
+        if (marca != null) {
+            println("Nome atual da Marca: ${marca.nome}")
+            print("Novo Nome da Marca: ")
+            val novoNome = readLine()!!
+            marca.nome = novoNome
+            println("Marca editada com sucesso!")
+        } else {
+            println("Marca não encontrada.")
+        }
+    } catch (e: NumberFormatException) {
+        println("Erro: Por favor, insira um número válido para o ID da marca.")
     }
 }
 
